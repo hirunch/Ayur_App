@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg6blur"
+    tools:context=".BangalowsActivity">
+
+    <LinearLayout
+        android:id="@+id/bangalowLayout"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@color/background"
+        android:backgroundTint="@color/white_low"
+        android:orientation="horizontal"
+        android:paddingTop="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+
+        <TextView
+            android:id="@+id/bangaHd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="28dp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:layout_marginStart="30dp"
+            android:text="Circuit Bangalows" />
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView4"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/white_low"
+        app:cardCornerRadius="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bangalowLayout"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/dpImg1"
+            android:layout_width="110dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/dp1" />
+
+
+    </androidx.cardview.widget.CardView>
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="551dp"
+        android:background="@drawable/stk"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView4"
+        tools:ignore="MissingConstraints">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="430dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingTop="50dp"
+        android:paddingBottom="50dp"
+        android:background="@color/article_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView4"
+        tools:ignore="MissingConstraints">
+
+        <FrameLayout
+            android:id="@+id/bangalow1"
+            android:layout_width="370dp"
+            android:layout_height="320dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="40dp"
+            android:padding="10dp"
+            android:background="@drawable/article_bg"
+            >
+
+
+            <TextView
+                android:id="@+id/haldummullaName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:textAlignment="center"
+                android:layout_gravity="center_horizontal"
+                android:text="Haldummulla Ayurvedic Circuit Bangalow" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="250dp"
+                android:layout_marginTop="70dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="160dp"
+                app:cardCornerRadius="25dp">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="250dp"
+                    android:layout_height="165dp"
+                    app:srcCompat="@drawable/bng1" />
+            </androidx.cardview.widget.CardView>
+
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="bottom">
+
+                <Button
+                    android:id="@+id/haldummullaDetalis"
+                    android:layout_width="130dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/reg_fill"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:text="Details" />
+
+                <Button
+                    android:id="@+id/haldummullaLocation"
+                    android:layout_width="130dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center"
+                    android:layout_row="0"
+                    android:layout_column="1"
+                    android:background="@drawable/reg_fill"
+                    android:text="Location"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+
+            </GridLayout>
+
+
+
+        </FrameLayout>
+
+
+        <FrameLayout
+            android:id="@+id/bangalow2"
+            android:layout_width="370dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/article_bg">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                android:textAlignment="center"
+                android:layout_gravity="center_horizontal"
+                android:text="Pattipola Ayurvedic Circuit Bangalow" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="240dp"
+                android:layout_marginTop="60dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="160dp"
+                app:cardCornerRadius="25dp">
+
+                <ImageView
+                    android:id="@+id/pattipolaImg"
+                    android:layout_width="240dp"
+                    android:layout_height="160dp"
+                    app:srcCompat="@drawable/bng2" />
+            </androidx.cardview.widget.CardView>
+
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="220dp">
+
+                <Button
+                    android:id="@+id/pattipolaDetalis"
+                    android:layout_width="130dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/reg_fill"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:text="Details" />
+
+                <Button
+                    android:id="@+id/pattipolaLocation"
+                    android:layout_width="130dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center"
+                    android:layout_row="0"
+                    android:layout_column="1"
+                    android:background="@drawable/reg_fill"
+                    android:text="Location"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+
+            </GridLayout>
+
+
+        </FrameLayout>
+
+
+        <FrameLayout
+            android:id="@+id/bangalow3"
+            android:layout_width="370dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/article_bg" >
+
+
+            <TextView
+                android:id="@+id/kataragamabangalowTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                android:textAlignment="center"
+                android:layout_gravity="center_horizontal"
+                android:text="Katharagama Ayurvedic Circuit Bangalow" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="250dp"
+                android:layout_marginTop="70dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="150dp"
+                app:cardCornerRadius="25dp">
+
+                <ImageView
+                    android:id="@+id/kataragamaBngImg"
+                    android:layout_width="250dp"
+                    android:layout_height="160dp"
+                    app:srcCompat="@drawable/bng3" />
+            </androidx.cardview.widget.CardView>
+
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="220dp">
+
+                <Button
+                    android:id="@+id/kataragamaBngDetalis"
+                    android:layout_width="130dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/reg_fill"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:text="Details" />
+
+                <Button
+                    android:id="@+id/kataragamaBngLocation"
+                    android:layout_width="130dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center"
+                    android:layout_row="0"
+                    android:layout_column="1"
+                    android:background="@drawable/reg_fill"
+                    android:text="Location"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+
+            </GridLayout>
+
+        </FrameLayout>
+
+
+
+
+    </LinearLayout>
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

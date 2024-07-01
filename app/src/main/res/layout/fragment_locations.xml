@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg6blur"
+    tools:context=".LocationsFragment">
+
+    <FrameLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="121dp"
+        android:background="@color/white_low"
+        android:orientation="horizontal"
+        android:paddingTop="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+
+        <TextView
+            android:id="@+id/locHd"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_weight="1"
+            android:textSize="28dp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:layout_marginStart="30dp"
+            android:text="Locations" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="624dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
+        tools:ignore="MissingConstraints">
+
+        <FrameLayout
+            android:id="@+id/departmentBtn"
+            android:layout_width="378dp"
+            android:layout_height="200dp"
+            android:gravity="center"
+            android:layout_marginBottom="40dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/article_bg"
+            android:paddingTop="30dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white_low"
+                android:layout_gravity="center_horizontal"
+                app:cardCornerRadius="25dp">
+
+                <ImageView
+                    android:id="@+id/dpImg1"
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/dp1" />
+
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/departmentTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:textSize="24dp"
+                android:textAlignment="center"
+                android:text="Provincial Departments of Ayurveda" />
+        </FrameLayout>
+
+
+        <FrameLayout
+            android:id="@+id/bangalowsBtn"
+            android:layout_width="378dp"
+            android:layout_height="200dp"
+            android:layout_marginBottom="25dp"
+            android:textColor="@color/black"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/article_bg"
+            android:paddingTop="30dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:backgroundTint="@color/white_low"
+                app:cardCornerRadius="25dp">
+
+                <ImageView
+                    android:id="@+id/bungalowImg1"
+                    android:layout_width="110dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/dp1" />
+
+
+            </androidx.cardview.widget.CardView>
+
+
+
+            <TextView
+                android:id="@+id/bangalowsTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                android:textSize="24dp"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:text="Circuit Bangalows"
+                />
+
+
+        </FrameLayout>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

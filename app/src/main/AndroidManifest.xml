@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.BODY_SENSORS" />
+    <uses-permission android:name="android.permission.BODY_SENSORS_BACKGROUND" />
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Ayur"
+        tools:targetApi="31">
+        <activity
+            android:name=".AboutUsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ArticleUpdateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".OtherHelpsViewsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".OtherHelpsUploadActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AbViewsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AthBehethUploadActivity"
+            android:exported="false" />
+        <activity
+            android:name=".OsuInfoViewsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".OsuInfoUploadActivity"
+            android:exported="false" />
+        <activity
+            android:name=".OthersHelpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AthBethethActivity"
+            android:exported="false" />
+        <activity
+            android:name=".OsuInfoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ArticleUploadActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ArticlesViewsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StartUpActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SignInInterfaceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DeleteAccountActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ForgotPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UserProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UserActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ArticleTwoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ArticleOneActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BangalowsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DepartmentsMapActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomeInterfaceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginInterfaceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegisterInterfaceActivity"
+            android:exported="false" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/my_app_api_key" />
+    </application>
+
+</manifest>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+
+
+    <item android:state_pressed="true"
+        android:color="@color/green"/>
+
+    <item android:state_selected="true"
+        android:color="@color/green"/>
+
+    <item android:state_hovered="true"
+        android:color="@color/green"/>
+
+    <item android:state_activated="true"
+        android:background="@color/green"/>
+
+
+    <item android:color="@color/dark_green"/>
+
+
+
+
+
+</selector>

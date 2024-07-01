@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:padding="20dp"
+    android:layout_width="350dp"
+    android:background="@drawable/cat_shape"
+    android:backgroundTint="@color/white"
+    android:layout_gravity="center_horizontal"
+    android:layout_height="wrap_content">
+    
+    <ProgressBar
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:indeterminateTint="@color/dark_green"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="4"
+        android:text="Saving...."
+        android:textSize="18dp"
+        android:textColor="@color/black"
+        android:gravity="start|center_vertical"
+        tools:ignore="Suspicious0dp" />
+
+</LinearLayout>

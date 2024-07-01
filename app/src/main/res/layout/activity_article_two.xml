@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg6blur"
+    tools:context=".ArticleTwoActivity">
+
+    <FrameLayout
+        android:id="@+id/frameLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:background="@color/white_low"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="150dp"
+            android:layout_height="110dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            app:srcCompat="@drawable/title2" />
+
+
+    </FrameLayout>
+
+    <ScrollView
+        android:layout_width="390dp"
+        android:layout_height="620dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/cat_shape"
+        android:backgroundTint="@color/white_low"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout2"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="590dp"
+            android:padding="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/article_hd"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:text="සැමට යහපත් සෞඛ්‍ය"
+                android:textAlignment="center"
+                android:textSize="24dp"
+                android:textStyle="bold" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="230dp"
+                android:layout_height="170dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="20dp"
+                android:elevation="3dp"
+                app:cardCornerRadius="30dp">
+
+                <ImageView
+                    android:layout_width="300dp"
+                    android:layout_height="230dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/article_pic2" />
+
+
+            </androidx.cardview.widget.CardView>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_margin="15dp"
+                android:background="@drawable/article_hd"
+                android:backgroundTint="@color/white_low"
+                android:gravity="center"
+                android:padding="10dp"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="4dp"
+                    android:text="හැඳින්වීම"
+                    android:textStyle="bold|italic"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="4dp"
+                    android:layout_marginTop="40dp"
+                    android:textColor="@color/black"
+                    android:text="@string/article_two_intro"
+                    android:textSize="17dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="4dp"
+                    android:layout_marginTop="500dp"
+                    android:textColor="@color/black"
+                    android:text="ශරීරය, මනස සහ ආත්මය"
+                    android:textStyle="bold|italic"
+                    android:textSize="20dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="540dp"
+                    android:lineSpacingExtra="4dp"
+                    android:textColor="@color/black"
+                    android:text="@string/article_two_intro_2"
+                    android:textSize="17dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="820dp"
+                    android:lineSpacingExtra="4dp"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="italic"
+                    android:text="ශාරීරික සෞඛ්‍යය"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="860dp"
+                    android:lineSpacingExtra="4dp"
+                    android:textColor="@color/black"
+                    android:text="@string/article_two_intro_3"
+                    android:textSize="17dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1120dp"
+                    android:lineSpacingExtra="4dp"
+                    android:textColor="@color/black"
+                    android:text="මානසික සෞඛ්‍යය"
+                    android:textStyle="italic"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1160dp"
+                    android:lineSpacingExtra="4dp"
+                    android:textColor="@color/black"
+                    android:text="@string/article_two_intro_4"
+                    android:textSize="17dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1420dp"
+                    android:lineSpacingExtra="4dp"
+                    android:textColor="@color/black"
+                    android:text="අධ්‍යාත්මික සෞඛ්‍යය"
+                    android:textStyle="italic"
+                    android:textSize="20dp" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1460dp"
+                    android:lineSpacingExtra="4dp"
+                    android:textColor="@color/black"
+                    android:text="@string/article_two_intro_5"
+                    android:textSize="17dp"/>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1760dp"
+                    android:lineSpacingExtra="4dp"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold|italic"
+                    android:text="සෞඛ්‍යය සඳහා ක්‍රියාකාරී සහභාගීත්වය දිරිමත් කිරීම"/>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1840dp"
+                    android:lineSpacingExtra="4dp"
+                    android:textColor="@color/black"
+                    android:text="@string/article_two_help"
+                    android:textSize="17dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2110dp"
+                    android:lineSpacingExtra="4dp"
+                    android:textColor="@color/black"
+                    android:textStyle="italic"
+                    android:textSize="20dp"
+                    android:text="ස්වයං දැනුවත්භාවය"/>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2150dp"
+                    android:lineSpacingExtra="4dp"
+                    android:textColor="@color/black"
+                    android:textSize="17dp"
+                    android:text="@string/article_two_help_1"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2420dp"
+                    android:lineSpacingExtra="4dp"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="italic"
+                    android:text="ස්වයං රැකවරණ පිළිවෙත්"/>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2460dp"
+                    android:lineSpacingExtra="4dp"
+                    android:textColor="@color/black"
+                    android:textSize="17dp"
+                    android:text="@string/article_two_help_2"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2760dp"
+                    android:lineSpacingExtra="4dp"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="italic"
+                    android:text="වැළැක්වීමේ පියවර"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2800dp"
+                    android:lineSpacingExtra="4dp"
+                    android:textColor="@color/black"
+                    android:textSize="17dp"
+                    android:text="@string/article_two_help_3"/>
+
+            </FrameLayout>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

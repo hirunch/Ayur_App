@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "574809192120",
+    "project_id": "ayur-51e30",
+    "storage_bucket": "ayur-51e30.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:574809192120:android:094c50b2b0c09b057f264d",
+        "android_client_info": {
+          "package_name": "com.s22010120.ayur"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoc2z5W2mHkl9umJUJbV4mKVtHKMz6hOw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

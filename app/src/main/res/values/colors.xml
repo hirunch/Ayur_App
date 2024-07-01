@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="white_low">#80FFFFFF</color>
+    <color name="btn_bk">#81ACA9A9</color>
+    <color name="reg_btn">#66EFD48C</color>
+    <color name="btn_bor">#636363</color>
+    <color name="home_bg">#EAFEE9</color>
+    <color name="background">#F1FFED</color>
+    <color name="article_bg">#65F5F5F5</color>
+    <color name="article_stoke">#BDBDBD</color>
+    <color name="green">#09811A</color>
+    <color name="dark_green">#013E09</color>
+    <color name="hintColor">#878787</color>
+    <color name="red">#F44336</color>
+    <color name="transparent">#00FFFFFF</color>
+</resources>

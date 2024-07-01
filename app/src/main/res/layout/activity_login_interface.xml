@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg2blur"
+    tools:context=".LoginInterfaceActivity">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:cardCornerRadius="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.093"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ayur"
+
+            tools:ignore="MissingConstraints" />
+    </androidx.cardview.widget.CardView>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="360dp"
+        android:layout_height="460dp"
+        android:background="@drawable/costom_shape"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.736"
+        tools:ignore="MissingConstraints">
+
+        <FrameLayout
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/costom_shape">
+
+
+            <TextView
+                android:id="@+id/loginName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/andika"
+                android:text="LOGIN"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="27sp"
+                android:textStyle="bold" />
+        </FrameLayout>
+
+        <EditText
+            android:id="@+id/uLoginEmail"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/hintColor"
+            android:background="@drawable/second_box"
+            android:ems="10"
+            android:hint="Email Address"
+            android:inputType="textEmailAddress"
+            android:textAlignment="center" />
+
+        <EditText
+            android:id="@+id/uLoginPassword"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/second_box"
+            android:ems="10"
+            android:hint="Password"
+            android:textColor="@color/black"
+            android:textColorHint="@color/hintColor"
+            android:inputType="textPassword"
+            android:textAlignment="center" />
+
+        <CheckBox
+            android:id="@+id/rememberLog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:buttonTint="@color/black"
+            android:layout_gravity="center_horizontal"
+            android:text="Remember Login" />
+
+        <TextView
+            android:id="@+id/forgetPasswordBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:padding="5dp"
+            android:text="Forget Passowrd"
+            android:layout_marginStart="50dp"
+            android:textStyle="italic|bold"
+            android:textColor="@color/black"
+            />
+
+
+        <Button
+            android:id="@+id/uLoginBtn"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:backgroundTint="@color/reg_btn"
+            android:text="Login"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/signUpTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:text="If you don't have account?"
+            android:padding="2dp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:textStyle="bold|italic"
+            android:fontFamily="@font/andika_new_basic"
+            />
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg6blur"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".HomeFragment">
+
+    
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="412dp"
+        android:layout_height="121dp"
+        android:background="@drawable/stk"
+        android:backgroundTint="@color/white_low"
+        android:paddingTop="35dp"
+        tools:ignore="MissingConstraints">
+
+
+        <ImageView
+            android:id="@+id/title"
+            android:layout_width="150dp"
+            android:layout_height="85dp"
+            android:layout_weight="1"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/title2" />
+
+
+        <TextView
+            android:id="@+id/adminTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:visibility="invisible" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="80dp"
+            android:layout_marginEnd="10dp"
+            app:cardCornerRadius="70dp">
+
+
+            <ImageView
+                android:id="@+id/user"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:src="@drawable/user" />
+
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/notifi"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/notifi" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:elevation="8dp"
+        android:layout_marginTop="150dp"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/cat_shape"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
+        app:layout_constraintVertical_bias="0.022"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/articleLv"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="5dp"
+            android:layout_gravity="start|center"
+            app:srcCompat="@drawable/articlelv" />
+
+        <TextView
+            android:id="@+id/hdName"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/andika"
+            android:gravity="center"
+            android:text="විශේෂාංග ලිපි"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="22dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/articleLv2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="5dp"
+            android:layout_gravity="end|center"
+            app:srcCompat="@drawable/articlelv" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="390dp"
+        android:layout_height="match_parent"
+        android:id="@+id/recycleView"
+        android:scrollbars="vertical"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/stk"
+        android:layout_marginTop="250dp"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fabButton"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="40dp"
+        android:src="@drawable/add"
+        android:backgroundTint="@color/green"
+        app:tint="@color/white"
+        tools:ignore="MissingConstraints" />
+
+</RelativeLayout>

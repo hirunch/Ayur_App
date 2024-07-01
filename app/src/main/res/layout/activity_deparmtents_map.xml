@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg6blur"
+    tools:context=".DepartmentsMapActivity">
+
+    <FrameLayout
+        android:id="@+id/depLocationLay"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:background="@color/background"
+        android:backgroundTint="@color/white_low"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+
+        <TextView
+            android:id="@+id/depLocationHd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_weight="1"
+            android:text="Provincial Departments of Ayurveda"
+            android:textSize="25dp"
+            android:textAlignment="center"/>
+    </FrameLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView4"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="@color/white_low"
+        app:cardCornerRadius="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.167"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/dpImg1"
+            android:layout_width="110dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/dp1" />
+
+
+    </androidx.cardview.widget.CardView>
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="407dp"
+        android:layout_height="500dp"
+        android:layout_marginTop="200dp"
+        android:background="@drawable/stk"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout9"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:orientation="vertical"
+            android:paddingBottom="80dp"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="-7dp"
+            tools:layout_editor_absoluteY="245dp">
+
+
+            <Button
+                android:id="@+id/depWest"
+                android:layout_width="353dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="25dp"
+                android:layout_weight="1"
+                android:background="@drawable/article_bg"
+                android:text="බස්නාහිර පළාත"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:icon="@drawable/baseline_maps_home_work_24"
+                app:iconGravity="textStart"
+                app:iconSize="30dp" />
+
+            <Button
+                android:id="@+id/depCentral"
+                android:layout_width="353dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="25dp"
+                android:layout_weight="1"
+                android:background="@drawable/article_bg"
+                android:text="මධ්‍යම පළාත"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:icon="@drawable/baseline_maps_home_work_24"
+                app:iconGravity="textStart"
+                app:iconSize="30dp" />
+
+            <Button
+                android:id="@+id/depNorthCentral"
+                android:layout_width="353dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="25dp"
+                android:layout_weight="1"
+                android:background="@drawable/article_bg"
+                android:text="උතුරු මැද පළාත"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:icon="@drawable/baseline_maps_home_work_24"
+                app:iconGravity="textStart"
+                app:iconSize="30dp" />
+
+
+            <Button
+                android:id="@+id/depSouth"
+                android:layout_width="353dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="25dp"
+                android:layout_weight="1"
+                android:background="@drawable/article_bg"
+                android:text="දකුණු පළාත"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:icon="@drawable/baseline_maps_home_work_24"
+                app:iconGravity="textStart"
+                app:iconSize="30dp" />
+
+            <Button
+                android:id="@+id/depSabaragamuwa"
+                android:layout_width="353dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="25dp"
+                android:layout_weight="1"
+                android:background="@drawable/article_bg"
+                android:text="සබරගමුව පළාත"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:icon="@drawable/baseline_maps_home_work_24"
+                app:iconGravity="textStart"
+                app:iconSize="30dp" />
+
+
+            <Button
+                android:id="@+id/depNorthWest"
+                android:layout_width="353dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="25dp"
+                android:layout_weight="1"
+                android:background="@drawable/article_bg"
+                android:text="වයඹ පළාත"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:icon="@drawable/baseline_maps_home_work_24"
+                app:iconGravity="textStart"
+                app:iconSize="30dp" />
+
+
+            <Button
+                android:id="@+id/depUva"
+                android:layout_width="353dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="25dp"
+                android:layout_weight="1"
+                android:background="@drawable/article_bg"
+                android:text="ඌව පළාත"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:icon="@drawable/baseline_maps_home_work_24"
+                app:iconGravity="textStart"
+                app:iconSize="30dp" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
