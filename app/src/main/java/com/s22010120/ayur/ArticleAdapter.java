@@ -35,6 +35,7 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleViewHolder> {
         Glide.with(context).load(dataList.get(position).getDataImage()).into(holder.recImage);
         holder.recTopic.setText(dataList.get(position).getDataTopic());
         holder.recDesc.setText(dataList.get(position).getDataDesc());
+        holder.recDate.setText(dataList.get(position).getDataDate());
 
         holder.recCard.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,6 +45,7 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleViewHolder> {
                 intent.putExtra("Description", dataList.get(holder.getAdapterPosition()).getDataDesc());
                 intent.putExtra("Topic", dataList.get(holder.getAdapterPosition()).getDataTopic());
                 intent.putExtra("Key", dataList.get(holder.getAdapterPosition()).getKey());
+                intent.putExtra("Date", dataList.get(holder.getAdapterPosition()).getDataDate());
 
                 context.startActivity(intent);
             }
@@ -60,7 +62,7 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleViewHolder> {
 class ArticleViewHolder extends RecyclerView.ViewHolder{
 
     ImageView recImage;
-    TextView recTopic, recDesc;
+    TextView recTopic, recDesc, recDate;
     FrameLayout recCard;
 
     public ArticleViewHolder(@NonNull View itemView) {
@@ -70,6 +72,7 @@ class ArticleViewHolder extends RecyclerView.ViewHolder{
         recTopic = itemView.findViewById(R.id.recTitle);
         recDesc = itemView.findViewById(R.id.recDesc);
         recCard = itemView.findViewById(R.id.recCard);
+        recDate = itemView.findViewById(R.id.recDate);
 
 
     }

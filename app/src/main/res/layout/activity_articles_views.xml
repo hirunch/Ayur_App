@@ -41,12 +41,13 @@
 
 
         <ScrollView
-            android:layout_gravity="center_horizontal"
             android:layout_width="390dp"
-            android:layout_height="match_parent"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/cat_shape"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="45dp"
+            android:padding="2dp"
             android:layout_centerHorizontal="true"
+            android:background="@drawable/user_bg"
             tools:ignore="MissingConstraints">
 
 
@@ -60,11 +61,12 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:padding="5dp"
                     android:id="@+id/detailTitle"
                     android:layout_marginTop="30dp"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
-                    android:background="@drawable/article_hd"
+                    android:background="@drawable/article_bg"
                     android:textSize="30dp"
                     android:text="Title"
                     android:textStyle="bold"
@@ -102,16 +104,26 @@
                     android:layout_marginTop="40dp"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
-                    android:gravity="center"
-                    android:padding="10dp"
+                    android:padding="16dp"
                     android:lineSpacingExtra="4dp"
                     android:text="Description"
-                    android:layout_gravity="center"
-                    android:textAlignment="center"
+                    android:gravity="start|center_vertical"
                     android:background="@drawable/article_hd"
                     android:backgroundTint="@color/white_low"
                     android:layout_marginBottom="20dp"
                     android:textColor="@color/black"/>
+
+                <TextView
+                    android:id="@+id/detailDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="17dp"
+                    android:textColor="@color/white_low"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:gravity="left"
+                    android:padding="10dp"
+                    android:text="Date" />
 
             </LinearLayout>
 
@@ -121,7 +133,7 @@
             android:id="@+id/fabarAdmin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="40dp"
             android:layout_marginEnd="10dp"
             app:menu_colorPressed="@color/transparent"
             app:menu_colorNormal="@color/transparent"
@@ -136,7 +148,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/arEditButton"
                 android:src="@drawable/baseline_edit_24"
-                app:fab_colorNormal="@color/dark_green"
+                app:fab_colorNormal="@color/green"
                 app:fab_size="mini"/>
 
             <com.github.clans.fab.FloatingActionButton
