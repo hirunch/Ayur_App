@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -13,11 +13,7 @@
         android:layout_height="121dp"
         android:background="@color/white_low"
         android:orientation="horizontal"
-        android:paddingTop="35dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints">
+        android:paddingTop="35dp">
 
 
         <TextView
@@ -33,101 +29,117 @@
             android:text="Locations" />
     </FrameLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="624dp"
-        android:orientation="vertical"
-        android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
-        tools:ignore="MissingConstraints">
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="130dp"
+        android:layout_height="wrap_content">
 
-        <FrameLayout
-            android:id="@+id/departmentBtn"
-            android:layout_width="378dp"
-            android:layout_height="200dp"
-            android:gravity="center"
-            android:layout_marginBottom="40dp"
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:background="@drawable/article_bg"
-            android:paddingTop="30dp">
+            android:orientation="vertical">
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/white_low"
-                android:layout_gravity="center_horizontal"
-                app:cardCornerRadius="25dp">
-
-                <ImageView
-                    android:id="@+id/dpImg1"
-                    android:layout_width="110dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center_horizontal"
-                    android:src="@drawable/dp1" />
-
-
-            </androidx.cardview.widget.CardView>
-
-            <TextView
-                android:id="@+id/departmentTxt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:layout_gravity="center"
-                android:textStyle="bold"
-                android:textSize="24dp"
-                android:textAlignment="center"
-                android:text="Provincial Departments of Ayurveda" />
-        </FrameLayout>
-
-
-        <FrameLayout
-            android:id="@+id/bangalowsBtn"
-            android:layout_width="378dp"
-            android:layout_height="200dp"
-            android:layout_marginBottom="25dp"
-            android:textColor="@color/black"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/article_bg"
-            android:paddingTop="30dp">
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:backgroundTint="@color/white_low"
-                app:cardCornerRadius="25dp">
-
-                <ImageView
-                    android:id="@+id/bungalowImg1"
-                    android:layout_width="110dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center_horizontal"
-                    android:src="@drawable/dp1" />
-
-
-            </androidx.cardview.widget.CardView>
-
-
-
-            <TextView
-                android:id="@+id/bangalowsTxt"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:layout_gravity="center"
-                android:textSize="24dp"
-                android:textAlignment="center"
-                android:textStyle="bold"
-                android:text="Circuit Bangalows"
-                />
+                android:layout_height="624dp"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <FrameLayout
+                    android:id="@+id/departmentBtn"
+                    android:layout_width="350dp"
+                    android:padding="5dp"
+                    android:layout_height="200dp"
+                    android:gravity="center"
+                    android:layout_marginBottom="40dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/article_bg">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="200dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/white_low"
+                        android:layout_gravity="center_horizontal"
+                        app:cardCornerRadius="25dp">
+
+                        <ImageView
+                            android:id="@+id/dpImg1"
+                            android:layout_width="110dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/dp1" />
 
 
-        </FrameLayout>
-    </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/departmentTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_gravity="center"
+                        android:textStyle="bold"
+                        android:layout_marginTop="10dp"
+                        android:textSize="24dp"
+                        android:textAlignment="center"
+                        android:text="Provincial Departments of Ayurveda" />
+                </FrameLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <FrameLayout
+                    android:id="@+id/bangalowsBtn"
+                    android:layout_width="350dp"
+                    android:layout_height="200dp"
+                    android:padding="5dp"
+                    android:layout_marginBottom="25dp"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/article_bg"
+                    android:paddingTop="30dp">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="200dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:backgroundTint="@color/white_low"
+                        app:cardCornerRadius="25dp">
+
+                        <ImageView
+                            android:id="@+id/bungalowImg1"
+                            android:layout_width="110dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/dp1" />
+
+
+                    </androidx.cardview.widget.CardView>
+
+
+
+                    <TextView
+                        android:id="@+id/bangalowsTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_gravity="center"
+                        android:textSize="24dp"
+                        android:layout_marginTop="10dp"
+                        android:textAlignment="center"
+                        android:textStyle="bold"
+                        android:text="Circuit Bangalows"
+                        />
+
+
+                </FrameLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+
+
+</RelativeLayout>

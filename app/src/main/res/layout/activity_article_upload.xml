@@ -31,6 +31,8 @@
                 android:layout_height="wrap_content"
                 android:text="විශේෂාංග ලිපි ඇතුලත් කරන්න"
                 android:textAlignment="center"
+                android:padding="5dp"
+                android:background="@drawable/user_bg"
                 android:textColor="@color/green"
                 android:textSize="25dp"
                 android:textStyle="bold" />
@@ -40,7 +42,7 @@
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="30dp"
                 android:scaleType="fitXY"
                 android:src="@drawable/uploading" />
 
@@ -50,6 +52,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:ems="10"
+                android:background="@drawable/user_bg"
                 android:gravity="start|center_vertical"
                 android:hint="ශීර්ෂය (මාතෘකාව) ඇතුලත් කරන්න"
                 android:inputType="text"
@@ -65,6 +68,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:ems="10"
+                android:background="@drawable/user_bg"
                 android:textColorHint="@color/hintColor"
                 android:gravity="start|center_vertical"
                 android:hint="විස්තරාත්මකව දක්වන්න"
@@ -77,7 +81,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Date"
+                android:layout_marginTop="20dp"
+                android:padding="16dp"
+                android:background="@drawable/user_bg"
+                android:textColorHint="@color/hintColor"
+                android:gravity="start|center_vertical"
+                android:textColor="@color/black"
+                android:hint="දිනය ඇතුලත් කරන්න"
                 android:inputType="date" />
 
             <Button
