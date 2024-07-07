@@ -31,7 +31,7 @@ import com.google.firebase.storage.StorageReference;
 
 public class ArticlesViewsActivity extends AppCompatActivity {
 
-    TextView detailTitle, detailDesc;
+    TextView detailTitle, detailDesc, detailDate;
     ImageView detailImage;
     FloatingActionButton arDeleteBtn, arEditBtn;
     private DatabaseHelper ayurDatabase;
@@ -49,6 +49,7 @@ public class ArticlesViewsActivity extends AppCompatActivity {
         detailTitle = findViewById(R.id.detailTitle);
         detailDesc = findViewById(R.id.detailDesc);
         detailImage = findViewById(R.id.detailImage);
+        detailDate = findViewById(R.id.detailDate);
         arDeleteBtn = findViewById(R.id.arDeleteButton);
         arFabm = findViewById(R.id.fabarAdmin);
         isAdmin = findViewById(R.id.adminar);
@@ -64,6 +65,7 @@ public class ArticlesViewsActivity extends AppCompatActivity {
         if(bundle != null){
             detailDesc.setText(bundle.getString("Description"));
             detailTitle.setText(bundle.getString("Topic"));
+            detailDate.setText(bundle.getString("Date"));
             key = bundle.getString("Key");
             imageUrl = bundle.getString("Image");
             Glide.with(this).load(bundle.getString("Image")).into(detailImage);
@@ -98,6 +100,7 @@ public class ArticlesViewsActivity extends AppCompatActivity {
                 Intent intent = new Intent(ArticlesViewsActivity.this, ArticleUpdateActivity.class)
                         .putExtra("Topic", detailTitle.getText().toString())
                         .putExtra("Description", detailDesc.getText().toString())
+                        .putExtra("Date", detailDate.getText().toString())
                         .putExtra("Image", imageUrl)
                         .putExtra("Key", key);
                 startActivity(intent);

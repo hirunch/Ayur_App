@@ -38,7 +38,7 @@ public class ArticleUploadActivity extends AppCompatActivity {
 
     ImageView articleImage;
     Button saveButton;
-    EditText articleTopic, articleDesc;
+    EditText articleTopic, articleDesc, articleDate;
     String imageURL;
     Uri uri;
 
@@ -51,6 +51,7 @@ public class ArticleUploadActivity extends AppCompatActivity {
         articleImage = findViewById(R.id.articleImage);
         articleTopic = findViewById(R.id.articleTopic);
         articleDesc = findViewById(R.id.articleDesc);
+        articleDate = findViewById(R.id.articleDate);
         saveButton = findViewById(R.id.saveButton);
 
         ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(
@@ -117,8 +118,9 @@ public class ArticleUploadActivity extends AppCompatActivity {
 
         String topic = articleTopic.getText().toString();
         String desc = articleDesc.getText().toString();
+        String date = articleDate.getText().toString();
 
-        DataClass dataClass = new DataClass(topic, desc, imageURL);
+        DataClass dataClass = new DataClass(topic, desc,date, imageURL);
 
         String currentDate = DateFormat.getDateTimeInstance().format(Calendar.getInstance().getTime());
         FirebaseDatabase.getInstance().getReference("Ayurvedha Articles").child(currentDate)

@@ -38,8 +38,10 @@ public class ArticleUpdateActivity extends AppCompatActivity {
 
     ImageView updateArImage;
     Button updateArBtn;
-    EditText updateArTitle, updateArDesc;
-    String topic, desc, arImageUrl, key, oldArImageUrl;
+    EditText updateArTitle, updateArDesc, updateDate;
+    String topic, desc, date;
+    String arImageUrl;
+    String key, oldArImageUrl;
     Uri arUri;
     DatabaseReference databaseReference;
     StorageReference storageReference;
@@ -54,7 +56,8 @@ public class ArticleUpdateActivity extends AppCompatActivity {
         updateArImage = findViewById(R.id.articleUpdateImage);
         updateArTitle = findViewById(R.id.articleUpdateTopic);
         updateArDesc = findViewById(R.id.articleUpdateDesc);
-        updateArBtn =  findViewById(R.id.saveUpdateButton);
+        updateDate = findViewById(R.id.articleUpdateDate);
+        updateArBtn = findViewById(R.id.saveUpdateButton);
 
         Fragment fragment = new HomeFragment();
 
@@ -63,13 +66,13 @@ public class ArticleUpdateActivity extends AppCompatActivity {
                 new ActivityResultCallback<ActivityResult>() {
                     @Override
                     public void onActivityResult(ActivityResult result) {
-                        if(result.getResultCode() == Activity.RESULT_OK){
+                        if (result.getResultCode() == Activity.RESULT_OK) {
                             Intent data = result.getData();
                             arUri = data.getData();
                             updateArImage.setImageURI(arUri);
-                        }else{
-                            Toast.makeText(ArticleUpdateActivity.this, "Not Any Image Selected",
-                                    Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(ArticleUpdateActivity.this, "No any Image Selected", Toast.LENGTH_SHORT).show();
+
                         }
                     }
                 }
@@ -77,10 +80,11 @@ public class ArticleUpdateActivity extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
 
-        if(bundle != null){
-            Glide.with(this).load(bundle.getString("Image")).into(updateArImage);
-            updateArDesc.setText(bundle.getString("Description"));
+        if (bundle != null) {
+            Glide.with(ArticleUpdateActivity.this).load(bundle.getString("Image")).into(updateArImage);
             updateArTitle.setText(bundle.getString("Topic"));
+            updateArDesc.setText(bundle.getString("Description"));
+            updateDate.setText(bundle.getString("Date"));
             key = bundle.getString("Key");
             oldArImageUrl = bundle.getString("Image");
         }
@@ -89,7 +93,7 @@ public class ArticleUpdateActivity extends AppCompatActivity {
 
         updateArImage.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 Intent photoPick = new Intent(Intent.ACTION_PICK);
                 photoPick.setType("image/*");
                 activityResultLauncher.launch(photoPick);
@@ -98,18 +102,16 @@ public class ArticleUpdateActivity extends AppCompatActivity {
 
         updateArBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 updateArData();
-                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.arMain,fragment).commit();
-                finish();
+
             }
         });
     }
 
-    public void updateArData(){
-        storageReference = FirebaseStorage.getInstance().getReference().child("Ayurvedha " +
-                "Articles").child(arUri.getLastPathSegment());
+    public void updateArData() {
+        storageReference = FirebaseStorage.getInstance().getReference().
+                child("Ayurvedha Articles").child(arUri.getLastPathSegment());
 
         AlertDialog.Builder builder = new AlertDialog.Builder(ArticleUpdateActivity.this);
         builder.setCancelable(false);
@@ -121,7 +123,7 @@ public class ArticleUpdateActivity extends AppCompatActivity {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                 Task<Uri> uriTask = taskSnapshot.getStorage().getDownloadUrl();
-                while (!uriTask.isComplete());
+                while (!uriTask.isComplete()) ;
                 Uri urlImage = uriTask.getResult();
                 arImageUrl = urlImage.toString();
                 uploadUpdateArticle();
@@ -134,29 +136,30 @@ public class ArticleUpdateActivity extends AppCompatActivity {
             }
         });
     }
+        public void uploadUpdateArticle () {
 
-    public void uploadUpdateArticle(){
+            topic = updateArTitle.getText().toString().trim();
+            desc = updateArDesc.getText().toString().trim();
+            date = updateDate.getText().toString();
 
-        topic = updateArTitle.getText().toString().trim();
-        desc = updateArDesc.getText().toString().trim();
+            DataClass dataClass = new DataClass(topic, desc, date, arImageUrl);
 
-        DataClass dataClass = new DataClass(topic, desc, arImageUrl);
-
-        databaseReference.setValue(dataClass).addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                if(task.isSuccessful()){
-                    StorageReference reference = FirebaseStorage.getInstance().getReference(oldArImageUrl);
-                    reference.delete();
-                    Toast.makeText(ArticleUpdateActivity.this,"Updated",Toast.LENGTH_SHORT).show();
-                    finish();
+            databaseReference.setValue(dataClass).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if(task.isSuccessful()){
+                        StorageReference reference = FirebaseStorage.getInstance().getReferenceFromUrl(oldArImageUrl);
+                        reference.delete();
+                        Toast.makeText(ArticleUpdateActivity.this,"Updated Scussesfully", Toast.LENGTH_SHORT).show();
+                        finish();
+                    }
                 }
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(ArticleUpdateActivity.this, e.getMessage().toString(), Toast.LENGTH_SHORT).show();
-            }
-        });
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(ArticleUpdateActivity.this, e.getMessage().toString(),Toast.LENGTH_SHORT).show();
+
+                }
+            });
+        }
     }
-}
