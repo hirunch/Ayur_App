@@ -39,6 +39,7 @@ public class OsuInfoAdapter extends RecyclerView.Adapter<OsuInfoViewHolder> {
         Glide.with(context).load(osuDataList.get(position).getOsuDataImage()).into(holder.osuRecImage);
         holder.osuRecTopic.setText(osuDataList.get(position).getOsuDataTopic());
         holder.osuRecDesc.setText(osuDataList.get(position).getOsuDataDesc());
+        holder.osuRecDate.setText(osuDataList.get(position).getOsuDataDate());
 
         holder.osuRecCard.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,6 +48,7 @@ public class OsuInfoAdapter extends RecyclerView.Adapter<OsuInfoViewHolder> {
                 intent.putExtra("Image", osuDataList.get(holder.getAdapterPosition()).getOsuDataImage());
                 intent.putExtra("Description", osuDataList.get(holder.getAdapterPosition()).getOsuDataDesc());
                 intent.putExtra("Topic", osuDataList.get(holder.getAdapterPosition()).getOsuDataTopic());
+                intent.putExtra("Date", osuDataList.get(holder.getAdapterPosition()).getOsuDataDate());
                 intent.putExtra("Key", osuDataList.get(holder.getAdapterPosition()).getOsuKey());
 
                 context.startActivity(intent);
@@ -69,7 +71,7 @@ public class OsuInfoAdapter extends RecyclerView.Adapter<OsuInfoViewHolder> {
 class OsuInfoViewHolder extends RecyclerView.ViewHolder{
 
     ImageView osuRecImage;
-    TextView osuRecTopic, osuRecDesc;
+    TextView osuRecTopic, osuRecDesc, osuRecDate;
     FrameLayout osuRecCard;
 
     public OsuInfoViewHolder(@NonNull View itemView) {
@@ -78,6 +80,7 @@ class OsuInfoViewHolder extends RecyclerView.ViewHolder{
         osuRecTopic = itemView.findViewById(R.id.osuRecTitle);
         osuRecImage = itemView.findViewById(R.id.osuRecImage);
         osuRecDesc = itemView.findViewById(R.id.osuRecDesc);
+        osuRecDate = itemView.findViewById(R.id.osuRecDate);
         osuRecCard = itemView.findViewById(R.id.osuRecCard);
 
 

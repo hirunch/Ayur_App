@@ -23,6 +23,15 @@
         android:theme="@style/Theme.Ayur"
         tools:targetApi="31">
         <activity
+            android:name=".ohEditActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AbEditingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".OsuInfoEditingActivity"
+            android:exported="false" />
+        <activity
             android:name=".AboutUsActivity"
             android:exported="false" />
         <activity

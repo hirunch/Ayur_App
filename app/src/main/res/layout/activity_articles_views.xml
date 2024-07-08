@@ -47,7 +47,7 @@
             android:layout_marginBottom="45dp"
             android:padding="2dp"
             android:layout_centerHorizontal="true"
-            android:background="@drawable/user_bg"
+            android:background="@drawable/fill_bg"
             tools:ignore="MissingConstraints">
 
 
@@ -143,6 +143,7 @@
             android:layout_alignParentRight="true"
             app:menu_openDirection="up"
             app:menu_showShadow="true">
+
             <com.github.clans.fab.FloatingActionButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

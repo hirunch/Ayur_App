@@ -31,6 +31,8 @@
                 android:layout_height="wrap_content"
                 android:text="විවිධාංග ඇතුලත් කරන්න"
                 android:textAlignment="center"
+                android:background="@drawable/fill_bg"
+                android:padding="5dp"
                 android:textColor="@color/green"
                 android:textSize="30dp"
                 android:textStyle="bold" />
@@ -49,6 +51,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:background="@drawable/fill_bg"
                 android:textColorHint="@color/hintColor"
                 android:ems="10"
                 android:gravity="start|center_vertical"
@@ -64,12 +67,27 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:textColorHint="@color/hintColor"
+                android:background="@drawable/fill_bg"
                 android:ems="10"
                 android:gravity="start|center_vertical"
                 android:hint="විස්තරාත්මකව දක්වන්න"
                 android:inputType="textMultiLine"
                 android:padding="16dp"
                 android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/ohDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:layout_marginTop="20dp"
+                android:padding="16dp"
+                android:background="@drawable/fill_bg"
+                android:textColorHint="@color/hintColor"
+                android:gravity="start|center_vertical"
+                android:textColor="@color/black"
+                android:hint="දිනය ඇතුලත් කරන්න"
+                android:inputType="date" />
 
 
             <Button

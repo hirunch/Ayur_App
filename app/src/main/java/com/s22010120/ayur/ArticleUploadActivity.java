@@ -18,9 +18,6 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -120,11 +117,11 @@ public class ArticleUploadActivity extends AppCompatActivity {
         String desc = articleDesc.getText().toString();
         String date = articleDate.getText().toString();
 
-        DataClass dataClass = new DataClass(topic, desc,date, imageURL);
+        ArticleDataClass articleDataClass = new ArticleDataClass(topic, desc,date, imageURL);
 
         String currentDate = DateFormat.getDateTimeInstance().format(Calendar.getInstance().getTime());
         FirebaseDatabase.getInstance().getReference("Ayurvedha Articles").child(currentDate)
-                .setValue(dataClass).addOnCompleteListener(new OnCompleteListener<Void>() {
+                .setValue(articleDataClass).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful()){

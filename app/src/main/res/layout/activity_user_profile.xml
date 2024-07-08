@@ -145,7 +145,7 @@
                     android:layout_gravity="center_horizontal"
                     android:fontFamily="@font/andika_new_basic"
                     android:gravity="center"
-                    android:text="Email Name"
+                    android:text="Email Address"
                     android:textColor="@color/black"
                     android:textSize="17dp"
                     android:textStyle="bold" />

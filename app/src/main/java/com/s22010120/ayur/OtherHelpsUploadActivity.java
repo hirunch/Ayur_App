@@ -38,7 +38,7 @@ public class OtherHelpsUploadActivity extends AppCompatActivity {
 
     ImageView otherHImage;
     Button otherHSaveBtn;
-    EditText otherHTopic, otherHDesc;
+    EditText otherHTopic, otherHDesc, otherHDate;
     String otherHImageURL;
     Uri otherHuri;
 
@@ -51,6 +51,7 @@ public class OtherHelpsUploadActivity extends AppCompatActivity {
         otherHImage = findViewById(R.id.otherHImage);
         otherHTopic = findViewById(R.id.otherHTopic);
         otherHDesc = findViewById(R.id.otherHDesc);
+        otherHDate = findViewById(R.id.ohDate);
         otherHSaveBtn = findViewById(R.id.otherHSaveButton);
 
 
@@ -124,8 +125,9 @@ public class OtherHelpsUploadActivity extends AppCompatActivity {
 
         String ohTopicUp = otherHTopic.getText().toString();
         String ohDescUp = otherHDesc.getText().toString();
+        String ohDateUp = otherHDate.getText().toString();
 
-        OHelpsDataClass oHelpsDataClass = new OHelpsDataClass(ohTopicUp, ohDescUp, otherHImageURL);
+        OHelpsDataClass oHelpsDataClass = new OHelpsDataClass(ohTopicUp, ohDescUp, ohDateUp, otherHImageURL);
 
         String currentDate = DateFormat.getDateTimeInstance().format(Calendar.getInstance().getTime());
         FirebaseDatabase.getInstance().getReference("Other Helps Data").child(currentDate)

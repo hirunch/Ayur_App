@@ -28,9 +28,9 @@ import com.google.firebase.storage.StorageReference;
 
 public class AbViewsActivity extends AppCompatActivity {
 
-    TextView abDetailTitle, abDetailDesc;
+    TextView abDetailTitle, abDetailDesc, abDetailDate;
     ImageView abDetailImage;
-    FloatingActionButton abDeleteBtn;
+    FloatingActionButton abDeleteBtn, abEditBtn;
     private DatabaseHelper ayurDatabase;
     FloatingActionMenu abFabm;
     TextView isAdmin;
@@ -46,7 +46,9 @@ public class AbViewsActivity extends AppCompatActivity {
         abDetailTitle = findViewById(R.id.aBDetailTitle);
         abDetailDesc = findViewById(R.id.aBDetailDesc);
         abDetailImage = findViewById(R.id.aBDetailImage);
+        abDetailDate = findViewById(R.id.abDetailDate);
         abDeleteBtn = findViewById(R.id.abDeleteButton);
+        abEditBtn = findViewById(R.id.abEditButton);
         isAdmin = findViewById(R.id.adminab);
         abFabm = findViewById(R.id.fababAdmin);
 
@@ -58,6 +60,7 @@ public class AbViewsActivity extends AppCompatActivity {
         if (bundle != null) {
             abDetailDesc.setText(bundle.getString("Description"));
             abDetailTitle.setText(bundle.getString("Topic"));
+            abDetailDate.setText(bundle.getString("Date"));
             abKey = bundle.getString("Key");
             abImageUrl = bundle.getString("Image");
             Glide.with(this).load(bundle.getString("Image")).into(abDetailImage);
@@ -81,6 +84,21 @@ public class AbViewsActivity extends AppCompatActivity {
                 });
             }
         });
+
+        //ab Editing Button
+        abEditBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AbViewsActivity.this, AbEditingActivity.class)
+                        .putExtra("Topic", abDetailTitle.getText().toString())
+                        .putExtra("Description", abDetailDesc.getText().toString())
+                        .putExtra("Date", abDetailDate.getText().toString())
+                        .putExtra("Image", abImageUrl)
+                        .putExtra("Key", abKey);
+                startActivity(intent);
+            }
+        });
+
         UisAdmin();
     }
     public void UisAdmin() {

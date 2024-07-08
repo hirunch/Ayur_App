@@ -25,9 +25,9 @@ import com.google.firebase.storage.StorageReference;
 
 public class OtherHelpsViewsActivity extends AppCompatActivity {
 
-    private TextView ohDetailTopic, ohDetailDec;
+    private TextView ohDetailTopic, ohDetailDec, ohDetailDate;
     private ImageView ohDetailImage;
-    FloatingActionButton ohDeleteBtn;
+    FloatingActionButton ohDeleteBtn, ohEditBtn;
     private DatabaseHelper ayurDatabase;
     FloatingActionMenu ohFabm;
     TextView isAdmin;
@@ -44,6 +44,8 @@ public class OtherHelpsViewsActivity extends AppCompatActivity {
         ohDetailImage = findViewById(R.id.ohDetailImage);
         ohDetailTopic = findViewById(R.id.ohDetailTitle);
         ohDetailDec = findViewById(R.id.ohDetailDesc);
+        ohDetailDate = findViewById(R.id.ohDetailDate);
+        ohEditBtn = findViewById(R.id.ohEditButton);
         ohDeleteBtn = findViewById(R.id.ohDeleteButton);
         ohFabm = findViewById(R.id.ohFam);
         isAdmin = findViewById(R.id.adminOhfab);
@@ -55,6 +57,7 @@ public class OtherHelpsViewsActivity extends AppCompatActivity {
         if(bundle != null){
             ohDetailDec.setText(bundle.getString("Description"));
             ohDetailTopic.setText(bundle.getString("Topic"));
+            ohDetailDate.setText(bundle.getString("Date"));
             ohKey = bundle.getString("Key");
             ohImageUrl = bundle.getString("Image");
             Glide.with(this).load(bundle.getString("Image")).into(ohDetailImage);
@@ -78,6 +81,21 @@ public class OtherHelpsViewsActivity extends AppCompatActivity {
 
                     }
                 });
+            }
+        });
+
+        //edit button
+        ohEditBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(OtherHelpsViewsActivity.this, ohEditActivity.class)
+                        .putExtra("Topic", ohDetailTopic.getText().toString())
+                        .putExtra("Description", ohDetailDec.getText().toString())
+                        .putExtra("Date", ohDetailDate.getText().toString())
+                        .putExtra("Image", ohImageUrl)
+                        .putExtra("Key", ohKey);
+
+                startActivity(intent);
             }
         });
 

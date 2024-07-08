@@ -38,6 +38,7 @@ public class AbDataAdapter extends RecyclerView.Adapter<AbViewHolder> {
         Glide.with(context).load(abDataList.get(position).getAthBehethImage()).into(holder.abRecImage);
         holder.abRecTopic.setText(abDataList.get(position).getAthBehethTopic());
         holder.abRecDesc.setText(abDataList.get(position).getAthBehethDesc());
+        holder.abRecDate.setText(abDataList.get(position).getAbDataDate());
 
         holder.abRecCard.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,6 +48,7 @@ public class AbDataAdapter extends RecyclerView.Adapter<AbViewHolder> {
                 intent.putExtra("Description", abDataList.get(holder.getAdapterPosition()).getAthBehethDesc());
                 intent.putExtra("Topic", abDataList.get(holder.getAdapterPosition()).getAthBehethTopic());
                 intent.putExtra("Key", abDataList.get(holder.getAdapterPosition()).getAbKey());
+                intent.putExtra("Date", abDataList.get(holder.getAdapterPosition()).getAbDataDate());
 
                 context.startActivity(intent);
             }
@@ -62,7 +64,7 @@ public class AbDataAdapter extends RecyclerView.Adapter<AbViewHolder> {
 class AbViewHolder extends RecyclerView.ViewHolder{
 
     ImageView abRecImage;
-    TextView abRecTopic, abRecDesc;
+    TextView abRecTopic, abRecDesc, abRecDate;
     FrameLayout abRecCard;
 
     public AbViewHolder(@NonNull View itemView) {
@@ -71,6 +73,7 @@ class AbViewHolder extends RecyclerView.ViewHolder{
         abRecTopic = itemView.findViewById(R.id.osuRecTitle);
         abRecImage = itemView.findViewById(R.id.osuRecImage);
         abRecDesc = itemView.findViewById(R.id.osuRecDesc);
+        abRecDate = itemView.findViewById(R.id.osuRecDate);
         abRecCard = itemView.findViewById(R.id.osuRecCard);
     }
 }

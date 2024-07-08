@@ -6,7 +6,7 @@
     android:background="@drawable/bg6blur"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ArticleUploadActivity">
+    tools:context=".ohEditActivity">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -29,47 +29,46 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="විශේෂාංග ලිපි ඇතුලත් කරන්න"
+                android:text="විවිධාංග වෙනස් කරන්න"
                 android:textAlignment="center"
-                android:padding="5dp"
                 android:background="@drawable/fill_bg"
+                android:padding="5dp"
                 android:textColor="@color/green"
-                android:textSize="25dp"
+                android:textSize="30dp"
                 android:textStyle="bold" />
 
             <ImageView
-                android:id="@+id/articleImage"
+                android:id="@+id/ohUpdateImage"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="10dp"
                 android:scaleType="fitXY"
                 android:src="@drawable/uploading" />
 
             <EditText
-                android:id="@+id/articleTopic"
+                android:id="@+id/ohUpdateTopic"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:ems="10"
                 android:background="@drawable/fill_bg"
+                android:textColorHint="@color/hintColor"
+                android:ems="10"
                 android:gravity="start|center_vertical"
                 android:hint="ශීර්ෂය (මාතෘකාව) ඇතුලත් කරන්න"
                 android:inputType="text"
-                android:textColorHint="@color/hintColor"
                 android:padding="16dp"
-                android:textColor="@color/black"
-                android:textSize="16dp" />
+                android:textColor="@color/black" />
 
 
             <EditText
-                android:id="@+id/articleDesc"
+                android:id="@+id/ohUpdateDesc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:ems="10"
-                android:background="@drawable/fill_bg"
                 android:textColorHint="@color/hintColor"
+                android:background="@drawable/fill_bg"
+                android:ems="10"
                 android:gravity="start|center_vertical"
                 android:hint="විස්තරාත්මකව දක්වන්න"
                 android:inputType="textMultiLine"
@@ -77,7 +76,7 @@
                 android:textColor="@color/black" />
 
             <EditText
-                android:id="@+id/articleDate"
+                android:id="@+id/ohUpdateDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -90,15 +89,19 @@
                 android:hint="දිනය ඇතුලත් කරන්න"
                 android:inputType="date" />
 
+
             <Button
-                android:id="@+id/saveButton"
+                android:id="@+id/ohUpdateButton"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginTop="20dp"
                 android:backgroundTint="@color/green"
-                android:text="Save"
+                android:text="Update"
                 android:textSize="18dp" />
         </LinearLayout>
     </FrameLayout>
+
+
+
 
 </ScrollView>

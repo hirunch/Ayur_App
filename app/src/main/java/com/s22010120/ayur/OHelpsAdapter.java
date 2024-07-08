@@ -36,6 +36,7 @@ public class OHelpsAdapter extends RecyclerView.Adapter<OHelpsViewHolder> {
         Glide.with(context).load(ohDataList.get(position).getOtherHImage()).into(holder.ohRecImage);
         holder.ohRecTopic.setText(ohDataList.get(position).getOtherHTopic());
         holder.ohRecDesc.setText(ohDataList.get(position).getOtherHDesc());
+        holder.ohRecDate.setText(ohDataList.get(position).getOhDateData());
 
         holder.ohRecCard.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,6 +46,7 @@ public class OHelpsAdapter extends RecyclerView.Adapter<OHelpsViewHolder> {
                 intent.putExtra("Description", ohDataList.get(holder.getAdapterPosition()).getOtherHDesc());
                 intent.putExtra("Topic", ohDataList.get(holder.getAdapterPosition()).getOtherHTopic());
                 intent.putExtra("Key", ohDataList.get(holder.getAdapterPosition()).getOhKey());
+                intent.putExtra("Date", ohDataList.get(holder.getAdapterPosition()).getOhDateData());
 
                 context.startActivity(intent);
             }
@@ -60,7 +62,7 @@ public class OHelpsAdapter extends RecyclerView.Adapter<OHelpsViewHolder> {
 
 class OHelpsViewHolder extends RecyclerView.ViewHolder{
     ImageView ohRecImage;
-    TextView ohRecTopic, ohRecDesc;
+    TextView ohRecTopic, ohRecDesc, ohRecDate;
     FrameLayout ohRecCard;
 
     public OHelpsViewHolder(@NonNull View itemView) {
@@ -69,6 +71,7 @@ class OHelpsViewHolder extends RecyclerView.ViewHolder{
         ohRecImage = itemView.findViewById(R.id.ohRecImage);
         ohRecTopic = itemView.findViewById(R.id.ohRecTitle);
         ohRecDesc = itemView.findViewById(R.id.ohRecDesc);
+        ohRecDate = itemView.findViewById(R.id.ohRecDate);
         ohRecCard = itemView.findViewById(R.id.ohRecCard);
 
 

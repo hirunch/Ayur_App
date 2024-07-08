@@ -4,6 +4,7 @@ public class OHelpsDataClass {
     private String otherHImage;
     private String otherHTopic;
     private String otherHDesc;
+    private String ohDateData;
     private String ohKey;
 
     public String getOhKey() {
@@ -23,12 +24,16 @@ public class OHelpsDataClass {
     public String getOtherHImage() {
         return otherHImage;
     }
+    public String getOhDateData(){
+        return ohDateData;
+    }
 
 
-    public OHelpsDataClass(String otherHTopic, String otherHDesc, String otherHImage) {
+    public OHelpsDataClass(String otherHTopic, String otherHDesc, String ohDateData, String otherHImage) {
         this.otherHTopic = otherHTopic;
         this.otherHDesc = otherHDesc;
         this.otherHImage = otherHImage;
+        this.ohDateData = ohDateData;
 
     }
 

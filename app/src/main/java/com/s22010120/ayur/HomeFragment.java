@@ -1,7 +1,5 @@
 package com.s22010120.ayur;
 
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
@@ -16,8 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -38,7 +34,7 @@ public class HomeFragment extends Fragment {
     private FloatingActionButton fab ;
     private TextView isAdmin ;
     private ImageView user;
-    List<DataClass> dataList;
+    List<ArticleDataClass> dataList;
     RecyclerView recyclerView;
     DatabaseReference databaseReference;
     ValueEventListener eventListener;
@@ -81,9 +77,9 @@ public class HomeFragment extends Fragment {
                 dataList.clear();
 
                 for(DataSnapshot itemSnapshot: snapshot.getChildren()){
-                    DataClass dataClass = itemSnapshot.getValue(DataClass.class);
-                    dataClass.setKey(itemSnapshot.getKey());
-                    dataList.add(dataClass);
+                    ArticleDataClass articleDataClass = itemSnapshot.getValue(ArticleDataClass.class);
+                    articleDataClass.setKey(itemSnapshot.getKey());
+                    dataList.add(articleDataClass);
                 }
 
                 adapter.notifyDataSetChanged();

@@ -38,7 +38,7 @@ public class AthBehethUploadActivity extends AppCompatActivity {
 
     ImageView abImage;
     Button abSaveBtn;
-    EditText abTopic, abDesc;
+    EditText abTopic, abDesc, abDate;
     String abImageURL;
     Uri aburi;
 
@@ -51,6 +51,7 @@ public class AthBehethUploadActivity extends AppCompatActivity {
         abImage = findViewById(R.id.aBImage);
         abTopic = findViewById(R.id.aBTopic);
         abDesc = findViewById(R.id.aBDesc);
+        abDate = findViewById(R.id.abDate);
         abSaveBtn = findViewById(R.id.aBSaveButton);
 
 
@@ -121,8 +122,9 @@ public class AthBehethUploadActivity extends AppCompatActivity {
 
         String aBTopicUp = abTopic.getText().toString();
         String aBDescUp = abDesc.getText().toString();
+        String aBDateUp = abDate.getText().toString();
 
-        AthBehethDataClass athBehethDataClass = new AthBehethDataClass(aBTopicUp, aBDescUp, abImageURL);
+        AthBehethDataClass athBehethDataClass = new AthBehethDataClass(aBTopicUp, aBDescUp, aBDateUp, abImageURL);
 
         String currentDate = DateFormat.getDateTimeInstance().format(Calendar.getInstance().getTime());
         FirebaseDatabase.getInstance().getReference("Ath Beheth Data").child(currentDate)

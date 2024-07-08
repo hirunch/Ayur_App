@@ -5,6 +5,7 @@ public class AthBehethDataClass {
     private String athBehethTopic;
     private String athBehethDesc;
     private String athBehethImage;
+    private String abDataDate;
     private String abKey;
 
     public String getAbKey() {
@@ -26,10 +27,14 @@ public class AthBehethDataClass {
     public String getAthBehethImage() {
         return athBehethImage;
     }
+    public String getAbDataDate(){
+        return  abDataDate;
+    }
 
-    public AthBehethDataClass(String athBehethTopic, String athBehethDesc, String athBehethImage) {
+    public AthBehethDataClass(String athBehethTopic, String athBehethDesc,String abDataDate, String athBehethImage) {
         this.athBehethTopic = athBehethTopic;
         this.athBehethDesc = athBehethDesc;
+        this.abDataDate = abDataDate;
         this.athBehethImage = athBehethImage;
     }
 

@@ -26,9 +26,9 @@ import com.google.firebase.storage.StorageReference;
 
 public class OsuInfoViewsActivity extends AppCompatActivity {
 
-    TextView osuDetailTitle, osuDetailDesc;
+    TextView osuDetailTitle, osuDetailDesc, osuDetailDate;
     ImageView osuDetailImage;
-    FloatingActionButton osuDeleteBtn;
+    FloatingActionButton osuDeleteBtn, osuEditBtn;
     private DatabaseHelper ayurDatabase;
     FloatingActionMenu osuFabm;
     TextView isAdmin;
@@ -44,7 +44,9 @@ public class OsuInfoViewsActivity extends AppCompatActivity {
         osuDetailTitle = findViewById(R.id.osuDetailTitle);
         osuDetailDesc = findViewById(R.id.osuDetailDesc);
         osuDetailImage = findViewById(R.id.osuDetailImage);
+        osuDetailDate = findViewById(R.id.osuDetailDate);
         osuDeleteBtn = findViewById(R.id.osuDeleteButton);
+        osuEditBtn = findViewById(R.id.osuEditButton);
         osuFabm = findViewById(R.id.osufab);
         isAdmin = findViewById(R.id.adminosu);
 
@@ -55,6 +57,7 @@ public class OsuInfoViewsActivity extends AppCompatActivity {
         if(bundle != null){
             osuDetailDesc.setText(bundle.getString("Description"));
             osuDetailTitle.setText(bundle.getString("Topic"));
+            osuDetailDate.setText(bundle.getString("Date"));
             osuKey = bundle.getString("Key");
             osuImageUrl = bundle.getString("Image");
             Glide.with(this).load(bundle.getString("Image")).into(osuDetailImage);
@@ -78,6 +81,20 @@ public class OsuInfoViewsActivity extends AppCompatActivity {
 
                     }
                 });
+            }
+        });
+
+        //osu article editing button
+        osuEditBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(OsuInfoViewsActivity.this, OsuInfoEditingActivity.class)
+                        .putExtra("Topic", osuDetailTitle.getText().toString())
+                        .putExtra("Description", osuDetailDesc.getText().toString())
+                        .putExtra("Date", osuDetailDate.getText().toString())
+                        .putExtra("Image", osuImageUrl)
+                        .putExtra("Key", osuKey);
+                startActivity(intent);
             }
         });
 

@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_width="350dp"
+    android:layout_height="100dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/ohRecCard"
-    android:elevation="5dp"
-    android:padding="10dp"
+    android:layout_centerInParent="true"
     android:background="@drawable/article_bg"
     android:layout_marginStart="20dp"
     android:layout_marginEnd="20dp"
@@ -13,32 +12,33 @@
     app:cardElevation="10dp">
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:elevation="5dp"
-        android:layout_height="wrap_content">
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:elevation="5dp">
 
         <TextView
             android:id="@+id/ohRecTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:textAlignment="center"
-            android:textStyle="bold|italic"
             android:fontFamily="@font/andika_new_basic"
             android:text="Title"
+            android:padding="5dp"
+            android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="20dp" />
-
+            android:textSize="20dp"
+            android:textStyle="bold|italic" />
 
 
         <androidx.cardview.widget.CardView
             android:id="@+id/osuCardViewRec"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
-            app:cardCornerRadius="30dp"
             android:visibility="invisible"
-            android:layout_centerHorizontal="true">
+            app:cardCornerRadius="30dp">
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/ohRecImage"
@@ -46,8 +46,8 @@
                 android:layout_height="match_parent"
                 android:layout_centerHorizontal="true"
                 android:scaleType="centerCrop"
-                android:visibility="invisible"
-                android:src="@drawable/uploading"/>
+                android:src="@drawable/uploading"
+                android:visibility="invisible" />
 
 
         </androidx.cardview.widget.CardView>
@@ -56,15 +56,33 @@
             android:id="@+id/ohRecDesc"
             android:layout_width="140dp"
             android:layout_height="5dp"
-            android:layout_centerHorizontal="true"
-            android:textAlignment="center"
-            android:text="Description"
-            android:visibility="invisible"
             android:layout_below="@+id/osuCardViewRec"
+            android:layout_centerHorizontal="true"
             android:gravity="center"
+            android:text="Description"
+            android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="30dp"/>
+            android:textSize="30dp"
+            android:visibility="invisible" />
+
+
 
     </RelativeLayout>
+
+    <TextView
+        android:id="@+id/ohRecDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/osuCardViewRec"
+        android:layout_alignParentStart="true"
+        android:layout_gravity="bottom"
+        android:gravity="center"
+        android:paddingBottom="10dp"
+        android:layout_marginStart="10dp"
+        android:text="Date"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="12dp"
+        android:visibility="visible" />
 
 </FrameLayout>

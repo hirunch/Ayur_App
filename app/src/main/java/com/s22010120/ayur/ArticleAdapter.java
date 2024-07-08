@@ -16,8 +16,8 @@ import java.util.List;
 public class ArticleAdapter extends RecyclerView.Adapter<ArticleViewHolder> {
 
     private Context context;
-    private List<DataClass> dataList;
-    public ArticleAdapter(Context context, List<DataClass> dataList){
+    private List<ArticleDataClass> dataList;
+    public ArticleAdapter(Context context, List<ArticleDataClass> dataList){
 
         this.context = context;
         this.dataList = dataList;

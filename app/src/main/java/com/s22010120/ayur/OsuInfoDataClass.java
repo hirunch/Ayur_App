@@ -5,6 +5,7 @@ public class OsuInfoDataClass {
     private String osuDataTopic;
     private String osuDataDesc;
     private String osuDataImage;
+    private String osuDataDate;
     private String osuKey;
 
     public String getOsuKey() {
@@ -26,11 +27,15 @@ public class OsuInfoDataClass {
     public String getOsuDataImage() {
         return osuDataImage;
     }
+    public String getOsuDataDate(){
+        return osuDataDate;
+    }
 
-    public OsuInfoDataClass(String osuDataTopic, String osuDataDesc, String osuDataImage) {
+    public OsuInfoDataClass(String osuDataTopic, String osuDataDesc,String osuDataDate, String osuDataImage) {
         this.osuDataTopic = osuDataTopic;
         this.osuDataDesc = osuDataDesc;
         this.osuDataImage = osuDataImage;
+        this.osuDataDate = osuDataDate;
     }
 
     public OsuInfoDataClass(){

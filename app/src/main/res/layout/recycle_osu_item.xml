@@ -62,6 +62,22 @@
             android:textColor="@color/black"
             android:textSize="30dp"/>
 
+        <TextView
+            android:id="@+id/osuRecDate"
+            android:layout_width="149dp"
+            android:layout_height="23dp"
+            android:layout_below="@+id/osuCardViewRec"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="16dp"
+            android:paddingBottom="10dp"
+            android:gravity="center"
+            android:text="Date"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            android:visibility="visible" />
+
     </RelativeLayout>
 
 </FrameLayout>

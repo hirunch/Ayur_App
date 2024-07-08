@@ -1,6 +1,6 @@
 package com.s22010120.ayur;
 
-public class DataClass {
+public class ArticleDataClass {
 
     private String dataTopic;
     private String dataDesc;
@@ -35,14 +35,14 @@ public class DataClass {
 
 
 
-    public DataClass(String dataTopic, String dataDesc,String dataDate, String dataImage) {
+    public ArticleDataClass(String dataTopic, String dataDesc, String dataDate, String dataImage) {
         this.dataTopic = dataTopic;
         this.dataDesc = dataDesc;
         this.dataImage = dataImage;
         this.dataDate = dataDate;
     }
 
-    public DataClass(){
+    public ArticleDataClass(){
 
     }
 }

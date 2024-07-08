@@ -38,7 +38,7 @@ public class OsuInfoUploadActivity extends AppCompatActivity {
 
     ImageView osuImage;
     Button osuSaveBtn;
-    EditText osuTopic, osuDesc;
+    EditText osuTopic, osuDesc, osuDate;
     String osuImageURL;
     Uri osuuri;
 
@@ -51,6 +51,7 @@ public class OsuInfoUploadActivity extends AppCompatActivity {
         osuImage = findViewById(R.id.osuImage);
         osuTopic = findViewById(R.id.osuTopic);
         osuDesc = findViewById(R.id.osuDesc);
+        osuDate = findViewById(R.id.osuDate);
         osuSaveBtn = findViewById(R.id.osuSaveButton);
 
         ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(
@@ -121,8 +122,9 @@ public class OsuInfoUploadActivity extends AppCompatActivity {
     public void uploadOsuData(){
         String osuTopicUp = osuTopic.getText().toString();
         String osuDescUp = osuDesc.getText().toString();
+        String osuDateUp = osuDate.getText().toString();
 
-        OsuInfoDataClass osuInfoDataClass = new OsuInfoDataClass(osuTopicUp, osuDescUp, osuImageURL);
+        OsuInfoDataClass osuInfoDataClass = new OsuInfoDataClass(osuTopicUp, osuDescUp,osuDateUp, osuImageURL);
 
         String currentDate = DateFormat.getDateTimeInstance().format(Calendar.getInstance().getTime());
         FirebaseDatabase.getInstance().getReference("Osu Data").child(currentDate)

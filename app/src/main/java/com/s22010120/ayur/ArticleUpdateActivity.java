@@ -19,7 +19,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
+
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -30,9 +30,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-
-import java.text.DateFormat;
-import java.util.Calendar;
 
 public class ArticleUpdateActivity extends AppCompatActivity {
 
@@ -71,7 +68,8 @@ public class ArticleUpdateActivity extends AppCompatActivity {
                             arUri = data.getData();
                             updateArImage.setImageURI(arUri);
                         } else {
-                            Toast.makeText(ArticleUpdateActivity.this, "No any Image Selected", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ArticleUpdateActivity.this,
+                                    "No any Image Selected", Toast.LENGTH_SHORT).show();
 
                         }
                     }
@@ -81,7 +79,8 @@ public class ArticleUpdateActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
 
         if (bundle != null) {
-            Glide.with(ArticleUpdateActivity.this).load(bundle.getString("Image")).into(updateArImage);
+            Glide.with(ArticleUpdateActivity.this).load(bundle.getString("Image"))
+                    .into(updateArImage);
             updateArTitle.setText(bundle.getString("Topic"));
             updateArDesc.setText(bundle.getString("Description"));
             updateDate.setText(bundle.getString("Date"));
@@ -142,22 +141,26 @@ public class ArticleUpdateActivity extends AppCompatActivity {
             desc = updateArDesc.getText().toString().trim();
             date = updateDate.getText().toString();
 
-            DataClass dataClass = new DataClass(topic, desc, date, arImageUrl);
+            ArticleDataClass articleDataClass = new ArticleDataClass(topic, desc, date, arImageUrl);
 
-            databaseReference.setValue(dataClass).addOnCompleteListener(new OnCompleteListener<Void>() {
+            databaseReference.setValue(articleDataClass).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
                     if(task.isSuccessful()){
-                        StorageReference reference = FirebaseStorage.getInstance().getReferenceFromUrl(oldArImageUrl);
+                        StorageReference reference = FirebaseStorage.getInstance().
+                                getReferenceFromUrl(oldArImageUrl);
                         reference.delete();
-                        Toast.makeText(ArticleUpdateActivity.this,"Updated Scussesfully", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ArticleUpdateActivity.this,"Updated Scussesfully",
+                                Toast.LENGTH_SHORT).show();
                         finish();
                     }
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(ArticleUpdateActivity.this, e.getMessage().toString(),Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ArticleUpdateActivity.this, e.getMessage()
+                            .toString(),Toast.LENGTH_SHORT).show();
+                    finish();
 
                 }
             });
