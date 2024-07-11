@@ -9,7 +9,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
-
 import androidx.activity.EdgeToEdge;
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
@@ -18,10 +17,6 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -30,7 +25,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-
 import java.text.DateFormat;
 import java.util.Calendar;
 
@@ -47,14 +41,14 @@ public class AthBehethUploadActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_ath_beheth_upload);
-
+        //initialize id
         abImage = findViewById(R.id.aBImage);
         abTopic = findViewById(R.id.aBTopic);
         abDesc = findViewById(R.id.aBDesc);
         abDate = findViewById(R.id.abDate);
         abSaveBtn = findViewById(R.id.aBSaveButton);
 
-
+        //select image uri
         ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
                 new ActivityResultCallback<ActivityResult>() {
@@ -88,7 +82,7 @@ public class AthBehethUploadActivity extends AppCompatActivity {
         });
 
     }
-
+    //save data
     public void saveAbData(){
         StorageReference storageReference = FirebaseStorage.getInstance().getReference().child(
                 "Ath Beheth Data").child(aburi.getLastPathSegment());
@@ -98,7 +92,6 @@ public class AthBehethUploadActivity extends AppCompatActivity {
         builder.setView(R.layout.progress_layout);
         AlertDialog dialog = builder.create();
         dialog.show();
-
 
         storageReference.putFile(aburi).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
@@ -117,7 +110,7 @@ public class AthBehethUploadActivity extends AppCompatActivity {
             }
         });
     }
-
+    //save data uploading
     public void uploadAbData(){
 
         String aBTopicUp = abTopic.getText().toString();

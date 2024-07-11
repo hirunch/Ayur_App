@@ -11,7 +11,8 @@
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:layout_gravity="center_horizontal"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent">
 
 
         <FrameLayout
@@ -33,11 +34,12 @@
                 android:layout_height="wrap_content"
                 android:padding="10dp"
                 android:gravity="center"
-                android:layout_weight="1"
-                android:text="Videos"
+                android:text="@string/stVideo"
                 android:textColor="@color/black"
-                android:textSize="28dp" />
+                android:textSize="28sp" />
         </FrameLayout>
+
+
 
 
         <ScrollView
@@ -77,10 +79,10 @@
                         android:layout_marginBottom="10dp"
                         android:background="@drawable/stk2"
                         android:gravity="center"
-                        android:text="Sri Lankan Ayurveda"
+                        android:text="@string/vt1"
                         android:textAlignment="center"
                         android:textColor="@color/black"
-                        android:textSize="18dp"
+                        android:textSize="18sp"
                         android:textStyle="bold"
                         tools:ignore="RtlCompat" />
 
@@ -108,10 +110,10 @@
                         android:layout_marginBottom="10dp"
                         android:background="@drawable/stk2"
                         android:gravity="center"
-                        android:text="කොලෙස්ටෙරෝල් සහ සීනි පාලනයට උදව් කරන අරුම පුදුම තැම්බුම් හොද්ද"
+                        android:text="@string/vt2"
                         android:textAlignment="center"
                         android:textColor="@color/black"
-                        android:textSize="18dp"
+                        android:textSize="18sp"
                         android:textStyle="bold"
                         tools:ignore="RtlCompat" />
 
@@ -128,7 +130,6 @@
                     <WebView
                         android:id="@+id/ytVideo3"
                         android:layout_width="match_parent"
-
                         android:layout_height="230dp" />
 
 
@@ -140,10 +141,10 @@
                         android:layout_marginBottom="10dp"
                         android:background="@drawable/stk2"
                         android:gravity="center"
-                        android:text="SRI LANKAN AYURVEDA EPISODE 01"
+                        android:text="@string/vt3"
                         android:textAlignment="center"
                         android:textColor="@color/black"
-                        android:textSize="18dp"
+                        android:textSize="18sp"
                         android:textStyle="bold"
                         tools:ignore="RtlCompat" />
 
@@ -156,7 +157,6 @@
                     android:layout_height="300dp"
                     android:layout_margin="10dp"
                     android:backgroundTint="@color/article_bg"
-
                     app:cardCornerRadius="20dp">
 
                     <WebView
@@ -173,10 +173,10 @@
                         android:layout_marginBottom="10dp"
                         android:background="@drawable/stk2"
                         android:gravity="center"
-                        android:text="SRI LANKAN AYURVEDA EPISODE 02"
+                        android:text="@string/vt4"
                         android:textAlignment="center"
                         android:textColor="@color/black"
-                        android:textSize="18dp"
+                        android:textSize="18sp"
                         android:textStyle="bold"
                         tools:ignore="RtlCompat" />
 
@@ -205,10 +205,103 @@
                         android:layout_marginBottom="10dp"
                         android:background="@drawable/stk2"
                         android:gravity="center"
-                        android:text="SRI LANKAN AYURVEDA EPISODE 03"
+                        android:text="@string/vt5"
                         android:textAlignment="center"
                         android:textColor="@color/black"
-                        android:textSize="18dp"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        tools:ignore="RtlCompat" />
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="@color/article_bg"
+                    app:cardCornerRadius="20dp">
+
+                    <WebView
+                        android:id="@+id/ytVideo6"
+                        android:layout_width="match_parent"
+                        android:layout_height="230dp" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_gravity="bottom"
+                        android:layout_margin="15dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/stk2"
+                        android:gravity="center"
+                        android:text="@string/vt6"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        tools:ignore="RtlCompat" />
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="@color/article_bg"
+                    app:cardCornerRadius="20dp">
+
+                    <WebView
+                        android:id="@+id/ytVideo7"
+                        android:layout_width="match_parent"
+                        android:layout_height="230dp" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_gravity="bottom"
+                        android:layout_margin="15dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/stk2"
+                        android:gravity="center"
+                        android:text="@string/vt7"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        tools:ignore="RtlCompat" />
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="@color/article_bg"
+                    app:cardCornerRadius="20dp">
+
+                    <WebView
+                        android:id="@+id/ytVideo8"
+                        android:layout_width="match_parent"
+                        android:layout_height="230dp" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_gravity="bottom"
+                        android:layout_margin="15dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/stk2"
+                        android:gravity="center"
+                        android:text="@string/vt8"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
                         android:textStyle="bold"
                         tools:ignore="RtlCompat" />
 
@@ -220,6 +313,8 @@
         </ScrollView>
 
     </LinearLayout>
+
+
 
 
 

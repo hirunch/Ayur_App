@@ -19,7 +19,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -49,7 +48,7 @@ public class ArticleUpdateActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_article_update);
-
+        //initialize id
         updateArImage = findViewById(R.id.articleUpdateImage);
         updateArTitle = findViewById(R.id.articleUpdateTopic);
         updateArDesc = findViewById(R.id.articleUpdateDesc);
@@ -58,6 +57,7 @@ public class ArticleUpdateActivity extends AppCompatActivity {
 
         Fragment fragment = new HomeFragment();
 
+        //select image get uri
         ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
                 new ActivityResultCallback<ActivityResult>() {
@@ -75,21 +75,25 @@ public class ArticleUpdateActivity extends AppCompatActivity {
                     }
                 }
         );
-
+        // Retrieves the extras (bundle) from the intent that started this activity
         Bundle bundle = getIntent().getExtras();
-
         if (bundle != null) {
+            // Loads the image from the bundle into updateArImage using Glide
             Glide.with(ArticleUpdateActivity.this).load(bundle.getString("Image"))
                     .into(updateArImage);
+            // Sets the topic, description, and date text from the bundle into respective TextViews
             updateArTitle.setText(bundle.getString("Topic"));
             updateArDesc.setText(bundle.getString("Description"));
             updateDate.setText(bundle.getString("Date"));
+            // Retrieves the key and old image URL from the bundle
             key = bundle.getString("Key");
             oldArImageUrl = bundle.getString("Image");
         }
 
+        // Retrieves a reference to the Ayurvedha Articles node in the Firebase Realtime Database and specifies the child node using abKey
         databaseReference = FirebaseDatabase.getInstance().getReference("Ayurvedha Articles").child(key);
 
+        //image pick external Storage
         updateArImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -108,7 +112,9 @@ public class ArticleUpdateActivity extends AppCompatActivity {
         });
     }
 
+    //update data saving function
     public void updateArData() {
+        // Retrieves a reference to the Firebase Storage and specifies the location of the file using child nodes
         storageReference = FirebaseStorage.getInstance().getReference().
                 child("Ayurvedha Articles").child(arUri.getLastPathSegment());
 
@@ -135,6 +141,7 @@ public class ArticleUpdateActivity extends AppCompatActivity {
             }
         });
     }
+    //uploading update data
         public void uploadUpdateArticle () {
 
             topic = updateArTitle.getText().toString().trim();

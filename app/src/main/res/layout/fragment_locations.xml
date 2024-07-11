@@ -21,12 +21,11 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            android:layout_weight="1"
-            android:textSize="28dp"
+            android:textSize="28sp"
             android:gravity="center"
             android:textColor="@color/black"
             android:layout_marginStart="30dp"
-            android:text="Locations" />
+            android:text="@string/stLoc" />
     </FrameLayout>
 
     <ScrollView
@@ -45,7 +44,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="624dp"
                 android:orientation="vertical"
-                android:gravity="center">
+                android:gravity="center"
+                tools:ignore="UselessParent">
 
                 <FrameLayout
                     android:id="@+id/departmentBtn"
@@ -70,7 +70,8 @@
                             android:layout_width="110dp"
                             android:layout_height="50dp"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/dp1" />
+                            android:src="@drawable/dp1"
+                            android:contentDescription="@string/depLogo" />
 
 
                     </androidx.cardview.widget.CardView>
@@ -83,9 +84,9 @@
                         android:layout_gravity="center"
                         android:textStyle="bold"
                         android:layout_marginTop="10dp"
-                        android:textSize="24dp"
+                        android:textSize="24sp"
                         android:textAlignment="center"
-                        android:text="Provincial Departments of Ayurveda" />
+                        android:text="@string/stPorDept" />
                 </FrameLayout>
 
 
@@ -113,7 +114,8 @@
                             android:layout_width="110dp"
                             android:layout_height="50dp"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/dp1" />
+                            android:src="@drawable/dp1"
+                            android:contentDescription="@string/depLogo" />
 
 
                     </androidx.cardview.widget.CardView>
@@ -126,12 +128,11 @@
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
                         android:layout_gravity="center"
-                        android:textSize="24dp"
+                        android:textSize="24sp"
                         android:layout_marginTop="10dp"
                         android:textAlignment="center"
                         android:textStyle="bold"
-                        android:text="Circuit Bangalows"
-                        />
+                        android:text="@string/stBang" />
 
 
                 </FrameLayout>

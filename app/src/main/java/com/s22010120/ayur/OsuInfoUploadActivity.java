@@ -9,7 +9,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
-
 import androidx.activity.EdgeToEdge;
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
@@ -18,10 +17,6 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -30,7 +25,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-
 import java.text.DateFormat;
 import java.util.Calendar;
 
@@ -47,13 +41,14 @@ public class OsuInfoUploadActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_osu_info_upload);
-
+        //initialize id
         osuImage = findViewById(R.id.osuImage);
         osuTopic = findViewById(R.id.osuTopic);
         osuDesc = findViewById(R.id.osuDesc);
         osuDate = findViewById(R.id.osuDate);
         osuSaveBtn = findViewById(R.id.osuSaveButton);
 
+        //select image get uri
         ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
                 new ActivityResultCallback<ActivityResult>() {
@@ -88,7 +83,7 @@ public class OsuInfoUploadActivity extends AppCompatActivity {
         });
 
     }
-
+    //save article
     public void saveOsuData(){
 
         StorageReference storageReference = FirebaseStorage.getInstance().getReference().child(
@@ -118,7 +113,7 @@ public class OsuInfoUploadActivity extends AppCompatActivity {
             }
         });
     }
-
+    //save article uploading database
     public void uploadOsuData(){
         String osuTopicUp = osuTopic.getText().toString();
         String osuDescUp = osuDesc.getText().toString();

@@ -7,20 +7,12 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-
 import com.bumptech.glide.Glide;
 import com.github.clans.fab.FloatingActionButton;
 import com.github.clans.fab.FloatingActionMenu;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -58,20 +50,24 @@ public class AbViewsActivity extends AppCompatActivity {
 
 
         if (bundle != null) {
+            // Sets the description, title, and date text from the bundle into respective TextViews
             abDetailDesc.setText(bundle.getString("Description"));
             abDetailTitle.setText(bundle.getString("Topic"));
             abDetailDate.setText(bundle.getString("Date"));
+            // Retrieves the key, image URL from the bundle
             abKey = bundle.getString("Key");
             abImageUrl = bundle.getString("Image");
+            // Loads the image from the bundle into abDetailImage using Glide
             Glide.with(this).load(bundle.getString("Image")).into(abDetailImage);
 
         }
         abDeleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Retrieves a reference to the Ath Beheth Data node in the Firebase Realtime Database
                 final DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Ath Beheth Data");
+                // Retrieves an instance of FirebaseStorage and creates a StorageReference using the abImageUrl
                 FirebaseStorage storage = FirebaseStorage.getInstance();
-
                 StorageReference storageReference = storage.getReferenceFromUrl(abImageUrl);
                 storageReference.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
@@ -89,6 +85,7 @@ public class AbViewsActivity extends AppCompatActivity {
         abEditBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Creates an intent to start the AbEditingActivity and adds topic, description, date, image URL, and key as extras
                 Intent intent = new Intent(AbViewsActivity.this, AbEditingActivity.class)
                         .putExtra("Topic", abDetailTitle.getText().toString())
                         .putExtra("Description", abDetailDesc.getText().toString())

@@ -3,9 +3,7 @@ package com.s22010120.ayur;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,7 +20,7 @@ public class CategoriesFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView =  inflater.inflate(R.layout.fragment_categories, container, false);
-
+        //initialize id
         ImageView Ads1 = rootView.findViewById(R.id.imageAds1);
         ImageView Ads2 = rootView.findViewById(R.id.imageAds2);
         GridLayout osuBtn = rootView.findViewById(R.id.osu);

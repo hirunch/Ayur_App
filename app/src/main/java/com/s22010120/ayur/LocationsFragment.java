@@ -2,9 +2,7 @@ package com.s22010120.ayur;
 
 import android.content.Intent;
 import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,10 +17,9 @@ public class LocationsFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView =  inflater.inflate(R.layout.fragment_locations, container, false);
-
+        //initialize id
        FrameLayout departmentBtn =rootView.findViewById(R.id.departmentBtn);
        FrameLayout bangalowsBtn = rootView.findViewById(R.id.bangalowsBtn);
-
 
         departmentBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,7 +29,6 @@ public class LocationsFragment extends Fragment {
 
             }
         });
-
 
         bangalowsBtn.setOnClickListener(new View.OnClickListener() {
             @Override

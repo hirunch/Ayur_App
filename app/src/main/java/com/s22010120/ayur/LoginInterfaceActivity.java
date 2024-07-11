@@ -10,7 +10,6 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -28,9 +27,9 @@ public class LoginInterfaceActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_login_interface);
-
+        //call databaseHelper
         ayurDatabase = new DatabaseHelper(this);
-
+        //initialize id
         uLoginBtn = findViewById(R.id.uLoginBtn);
         userEmail = findViewById(R.id.uLoginEmail);
         userPassword = findViewById(R.id.uLoginPassword);
@@ -69,11 +68,8 @@ public class LoginInterfaceActivity extends AppCompatActivity {
                 finish();
             }
         });
-
-
         //login button
         userLogin();
-
     }
 
     //user login function and details validate
@@ -125,7 +121,6 @@ public class LoginInterfaceActivity extends AppCompatActivity {
                         Toast.makeText(LoginInterfaceActivity.this, "Email or Password " +
                                         "Incorrect",
                                 Toast.LENGTH_SHORT).show();
-                        userEmail.getText().clear();
                         userPassword.getText().clear();
                     }
                 }

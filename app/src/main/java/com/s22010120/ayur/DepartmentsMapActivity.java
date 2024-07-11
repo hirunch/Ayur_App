@@ -5,10 +5,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-
 import java.util.Locale;
 
 public class DepartmentsMapActivity extends AppCompatActivity {
@@ -27,7 +25,7 @@ public class DepartmentsMapActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_deparmtents_map);
-
+        //initialize id
         depWest = findViewById(R.id.depWest);
         depCentral = findViewById(R.id.depCentral);
         depNorthCentral = findViewById(R.id.depNorthCentral);

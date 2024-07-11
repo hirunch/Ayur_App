@@ -9,7 +9,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
-
 import androidx.activity.EdgeToEdge;
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
@@ -18,12 +17,7 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-
 import com.bumptech.glide.Glide;
-import com.google.android.gms.common.internal.Objects;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -51,14 +45,14 @@ public class ohEditActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_oh_edit);
-
+        //initialize id
         ohUpdateTopic = findViewById(R.id.ohUpdateTopic);
         ohUpdateDesc = findViewById(R.id.ohUpdateDesc);
         ohUpdateDate = findViewById(R.id.ohUpdateDate);
         ohUpdateImage = findViewById(R.id.ohUpdateImage);
         ohUpdateBtn = findViewById(R.id.ohUpdateButton);
 
-
+        //select image uri
         ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
                 new ActivityResultCallback<ActivityResult>() {
@@ -76,21 +70,24 @@ public class ohEditActivity extends AppCompatActivity {
                     }
                 }
         );
-
+        // Retrieves the extras (bundle) from the intent that started this activity
         Bundle bundle = getIntent().getExtras();
-
         if(bundle != null){
+            // Loads the image from the bundle into ohUpdateImage using Glide
             Glide.with(ohEditActivity.this).load(bundle.getString("Image")).into(ohUpdateImage);
+            // Sets the topic, description, and date text from the bundle into respective TextViews
             ohUpdateTopic.setText(bundle.getString("Topic"));
             ohUpdateDesc.setText(bundle.getString("Description"));
             ohUpdateDate.setText(bundle.getString("Date"));
+            // Retrieves the key and old image URL from the bundle
             ohKey = bundle.getString("Key");
             oldOhImageUrl = bundle.getString("Image");
 
         }
-
+        // Retrieves a reference to the Other Helps Data node in the Firebase Realtime Database and specifies the child node using ohKey
         databaseReference = FirebaseDatabase.getInstance().getReference("Other Helps Data").child(ohKey);
 
+        //image pick external storage
         ohUpdateImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -110,9 +107,9 @@ public class ohEditActivity extends AppCompatActivity {
 
 
     }
-
+    //save updated data
     public void saveOhUpdateData(){
-
+        // Retrieves a reference to the Firebase Storage and specifies the location of the file using child nodes
         storageReference = FirebaseStorage.getInstance().getReference().
                 child("Other Helps Data").child(ohUri.getLastPathSegment());
 

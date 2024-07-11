@@ -9,7 +9,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
-
 import androidx.activity.EdgeToEdge;
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
@@ -18,7 +17,6 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -27,7 +25,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-
 import java.text.DateFormat;
 import java.util.Calendar;
 
@@ -44,13 +41,14 @@ public class ArticleUploadActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_article_upload);
-
+        //initialize id
         articleImage = findViewById(R.id.articleImage);
         articleTopic = findViewById(R.id.articleTopic);
         articleDesc = findViewById(R.id.articleDesc);
         articleDate = findViewById(R.id.articleDate);
         saveButton = findViewById(R.id.saveButton);
 
+        //select image get uri
         ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
                 new ActivityResultCallback<ActivityResult>() {
@@ -84,6 +82,7 @@ public class ArticleUploadActivity extends AppCompatActivity {
         });
     }
 
+    //save article
     public void saveArticle(){
         StorageReference storageReference = FirebaseStorage.getInstance().getReference().child
                 ("Ayurvedha Articles").child(uri.getLastPathSegment());
@@ -111,6 +110,7 @@ public class ArticleUploadActivity extends AppCompatActivity {
             }
         });
     }
+    //save article uploading database
     public void uploadArticle(){
 
         String topic = articleTopic.getText().toString();

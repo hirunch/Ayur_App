@@ -9,7 +9,6 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,7 +18,6 @@ public class RegisterInterfaceActivity extends AppCompatActivity {
     private CheckBox adminCheck;
     private Button uRegisterBtn;
     private TextView loginTxt;
-
     DatabaseHelper ayurDatabase;
 
     @Override
@@ -27,7 +25,7 @@ public class RegisterInterfaceActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_register_interface);
-
+        //intialize id
         loginTxt = findViewById(R.id.loginTxt);
         //User Register details
         uRegisterBtn = findViewById(R.id.uRegister);
@@ -38,8 +36,7 @@ public class RegisterInterfaceActivity extends AppCompatActivity {
         rePassword = findViewById(R.id.uRPassword);
         confirmAdmin = findViewById(R.id.confirmAdmin);
         adminCheck = findViewById(R.id.adminCheck);
-
-
+        //call databaseHelper
         ayurDatabase = new DatabaseHelper(this);
 
         //loginTxt
@@ -102,7 +99,7 @@ public class RegisterInterfaceActivity extends AppCompatActivity {
                             Toast.makeText(RegisterInterfaceActivity.this, "Registration Successfully",
                                     Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(RegisterInterfaceActivity.this,
-                                    SignInInterfaceActivity.class);
+                                    LoginInterfaceActivity.class);
                             startActivity(intent);
                             finish();
 
@@ -127,7 +124,7 @@ public class RegisterInterfaceActivity extends AppCompatActivity {
                         Toast.makeText(RegisterInterfaceActivity.this, "Registration Successfully",
                                 Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(RegisterInterfaceActivity.this,
-                                SignInInterfaceActivity.class);
+                                LoginInterfaceActivity.class);
                         startActivity(intent);
                         finish();
 

@@ -30,7 +30,6 @@
             android:id="@+id/adminab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:visibility="invisible" />
 
     </FrameLayout>
@@ -72,14 +71,13 @@
                     android:text="Title"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="20dp"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cardViewRec"
                     android:layout_width="250dp"
                     android:layout_height="180dp"
-                    android:layout_centerHorizontal="true"
                     android:layout_gravity="center"
                     android:layout_marginTop="40dp"
                     app:cardCornerRadius="30dp">
@@ -90,7 +88,8 @@
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/uploading" />
+                        android:src="@drawable/uploading"
+                        android:contentDescription="@string/upImg" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -108,22 +107,23 @@
                     android:backgroundTint="@color/white_low"
                     android:gravity="start|center_vertical"
                     android:lineSpacingExtra="4dp"
-                    android:padding="16dp"
+                    android:padding="16sp"
                     android:text="Description"
                     android:textColor="@color/black"
-                    android:textSize="17dp" />
+                    android:textSize="17sp" />
 
                 <TextView
                     android:id="@+id/abDetailDate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="17dp"
+                    android:textSize="17sp"
                     android:textColor="@color/white_low"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
                     android:gravity="left"
                     android:padding="10dp"
-                    android:text="Date" />
+                    android:text="Date"
+                    tools:ignore="RtlHardcoded" />
 
             </LinearLayout>
 
@@ -133,7 +133,7 @@
             android:id="@+id/fababAdmin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="40dp"

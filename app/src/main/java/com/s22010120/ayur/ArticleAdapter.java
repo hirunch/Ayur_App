@@ -17,12 +17,16 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleViewHolder> {
 
     private Context context;
     private List<ArticleDataClass> dataList;
+
+    // Constructor for AbDataAdapter class.
+    // Initializes the context and the list of ArticleDataClass objects
     public ArticleAdapter(Context context, List<ArticleDataClass> dataList){
 
         this.context = context;
         this.dataList = dataList;
     }
 
+    // Creates and returns a new ArticleViewHolder by inflating the recycle_item layout for each item in the RecyclerView
     @NonNull
     @Override
     public ArticleViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -30,9 +34,12 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleViewHolder> {
         return new ArticleViewHolder(view);
     }
 
+    // Binds the data from dataList to the views in the ViewHolder for the item at the specified position
     @Override
     public void onBindViewHolder(@NonNull ArticleViewHolder holder, int position) {
+        // Loads the image from the URL in abDataList using Glide and sets it into the abRecImage ImageView
         Glide.with(context).load(dataList.get(position).getDataImage()).into(holder.recImage);
+        //Sets the topic, Description and Date text from abDataList into the recTopic, recDesc and recDate TextView
         holder.recTopic.setText(dataList.get(position).getDataTopic());
         holder.recDesc.setText(dataList.get(position).getDataDesc());
         holder.recDate.setText(dataList.get(position).getDataDate());
@@ -40,7 +47,9 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleViewHolder> {
         holder.recCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Creates a new Intent to start the ArticlesViewsActivity
                 Intent intent = new Intent(context, ArticlesViewsActivity.class);
+                // Adds the image URL,description, topic, key, and date from the current item in dataList to the intent extras
                 intent.putExtra("Image", dataList.get(holder.getAdapterPosition()).getDataImage());
                 intent.putExtra("Description", dataList.get(holder.getAdapterPosition()).getDataDesc());
                 intent.putExtra("Topic", dataList.get(holder.getAdapterPosition()).getDataTopic());
@@ -53,6 +62,7 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleViewHolder> {
 
     }
 
+    // Returns the number of items in the dataList, which represents the total number of items to be displayed in the RecyclerView
     @Override
     public int getItemCount() {
         return dataList.size();
@@ -67,7 +77,7 @@ class ArticleViewHolder extends RecyclerView.ViewHolder{
 
     public ArticleViewHolder(@NonNull View itemView) {
         super(itemView);
-
+        //initialize id
         recImage = itemView.findViewById(R.id.recImage);
         recTopic = itemView.findViewById(R.id.recTitle);
         recDesc = itemView.findViewById(R.id.recDesc);

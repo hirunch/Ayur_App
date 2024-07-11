@@ -10,7 +10,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
-
 import androidx.activity.EdgeToEdge;
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
@@ -18,10 +17,6 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -51,6 +46,7 @@ public class AbEditingActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_ab_editing);
 
+        //initialize id
         abUpdateTopic = findViewById(R.id.abUpdateTopic);
         abUpdateDesc = findViewById(R.id.abUpdateDesc);
         abUpdateDate = findViewById(R.id.abUpdateDate);
@@ -58,7 +54,6 @@ public class AbEditingActivity extends AppCompatActivity {
         abUpdateBtn = findViewById(R.id.abUpdateButton);
 
         //select image get uri
-
         ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
                 new ActivityResultCallback<ActivityResult>() {
@@ -79,15 +74,19 @@ public class AbEditingActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
 
         if(bundle != null){
+            // Loads the image from the bundle into abUpdateImage using Glide
             Glide.with(AbEditingActivity.this).load(bundle.getString("Image")).into(abUpdateImage);
+            // Sets the topic, description, and date text from the bundle into respective TextViews
             abUpdateTopic.setText(bundle.getString("Topic"));
             abUpdateDesc.setText(bundle.getString("Description"));
             abUpdateDate.setText(bundle.getString("Date"));
+            // Retrieves the key and old image URL from the bundle
             abKey = bundle.getString("Key");
             abOldImageUrl = bundle.getString("Image");
 
         }
 
+        // Retrieves a reference to the Ath Beheth Data node in the Firebase Realtime Database and specifies the child node using abKey
         databaseReference = FirebaseDatabase.getInstance().getReference("Ath Beheth Data").child(abKey);
 
         //image pick internal Storage

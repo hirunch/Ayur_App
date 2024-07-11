@@ -1,10 +1,7 @@
 package com.s22010120.ayur;
 
-
-
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,12 +13,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.biometric.BiometricManager;
 import androidx.biometric.BiometricPrompt;
 import androidx.core.content.ContextCompat;
-
-import com.bumptech.glide.Glide;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;
-
 import java.util.concurrent.Executor;
 
 public class HomeInterfaceActivity extends AppCompatActivity {
@@ -41,12 +34,9 @@ public class HomeInterfaceActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_home_interface);
-
+        //initialize id
         bottomNavigationView = findViewById(R.id.bottomNav);
         relativeLayout = findViewById(R.id.homeI);
-
-
-
 
         //fragments adding here
 

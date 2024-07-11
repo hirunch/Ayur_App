@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="279dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -12,8 +13,9 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="UselessParent">
 
-        android:layout_height="wrap_content">
         <TextView
             android:id="@+id/osuRecTitle"
             android:layout_width="wrap_content"
@@ -22,10 +24,10 @@
             android:layout_centerHorizontal="true"
             android:textAlignment="center"
             android:textStyle="bold"
-            android:text="Title"
+            android:text="@string/stringTopic"
             android:gravity="center"
             android:textColor="@color/black"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
 
 
 
@@ -55,12 +57,12 @@
             android:layout_height="12dp"
             android:layout_centerHorizontal="true"
             android:textAlignment="center"
-            android:text="Description"
+            android:text="@string/stringDesc"
             android:visibility="invisible"
             android:layout_below="@+id/osuCardViewRec"
             android:gravity="center"
             android:textColor="@color/black"
-            android:textSize="30dp"/>
+            android:textSize="30sp"/>
 
         <TextView
             android:id="@+id/osuRecDate"
@@ -72,10 +74,10 @@
             android:layout_marginTop="16dp"
             android:paddingBottom="10dp"
             android:gravity="center"
-            android:text="Date"
+            android:text="@string/stringDate"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="12dp"
+            android:textSize="12sp"
             android:visibility="visible" />
 
     </RelativeLayout>

@@ -47,14 +47,14 @@ public class OtherHelpsUploadActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_other_helps_upload);
-
+        //initialize id
         otherHImage = findViewById(R.id.otherHImage);
         otherHTopic = findViewById(R.id.otherHTopic);
         otherHDesc = findViewById(R.id.otherHDesc);
         otherHDate = findViewById(R.id.ohDate);
         otherHSaveBtn = findViewById(R.id.otherHSaveButton);
 
-
+        //select image get uri
         ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
                 new ActivityResultCallback<ActivityResult>() {
@@ -91,6 +91,7 @@ public class OtherHelpsUploadActivity extends AppCompatActivity {
 
 
     }
+    //save OtherHelpsData
     public void saveOtherHelpsData(){
 
         StorageReference storageReference = FirebaseStorage.getInstance().getReference().child(
@@ -120,7 +121,7 @@ public class OtherHelpsUploadActivity extends AppCompatActivity {
             }
         });
     }
-
+    //save OtherHelpsData Uploading database
     public void uploadOtherHData(){
 
         String ohTopicUp = otherHTopic.getText().toString();

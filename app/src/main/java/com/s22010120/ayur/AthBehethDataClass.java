@@ -11,19 +11,15 @@ public class AthBehethDataClass {
     public String getAbKey() {
         return abKey;
     }
-
     public void setAbKey(String abKey) {
         this.abKey = abKey;
     }
-
     public String getAthBehethTopic() {
         return athBehethTopic;
     }
-
     public String getAthBehethDesc() {
         return athBehethDesc;
     }
-
     public String getAthBehethImage() {
         return athBehethImage;
     }
@@ -31,6 +27,7 @@ public class AthBehethDataClass {
         return  abDataDate;
     }
 
+    // Constructor for AthBehethDataClass that initializes its fields with provided values
     public AthBehethDataClass(String athBehethTopic, String athBehethDesc,String abDataDate, String athBehethImage) {
         this.athBehethTopic = athBehethTopic;
         this.athBehethDesc = athBehethDesc;

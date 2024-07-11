@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -25,10 +24,9 @@ public class DeleteAccountActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_delete_account);
-
         //database
         ayurDatabase = new DatabaseHelper(this);
-
+        //initialize id
         deleteEmail = findViewById(R.id.uDeleteEmail);
         deletePassword = findViewById(R.id.uDeletePassword);
         deleteAccountBtn = findViewById(R.id.uDeleteBtn);
@@ -36,9 +34,9 @@ public class DeleteAccountActivity extends AppCompatActivity {
         //sharedPreference
         sp = getSharedPreferences("Data", MODE_PRIVATE);
         editor = sp.edit();
-
-
+        // Retrieves an instance of SharedPreferences with the name "ShName" and private mode
         SharedPreferences preferences = getSharedPreferences("ShName", Context.MODE_PRIVATE);
+        // Retrieves an editor for modifying the SharedPreferences
         deleteAuth =preferences.edit();
         //call delete function
         deleteAccount();

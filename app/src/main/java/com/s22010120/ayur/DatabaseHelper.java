@@ -5,7 +5,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
 import androidx.annotation.Nullable;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
@@ -24,7 +23,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COL_6 = "ISADMIN";
     private Context context;
 
-
+    // Constructor for DatabaseHelper class, Initializes the database with the specified name and version
     public DatabaseHelper(@Nullable Context context) {
 
         super(context, DATABASE_NAME, null, 1);
@@ -32,8 +31,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         this.context = context;
     }
 
-
-
+    //Creates the table specified by TABLE_NAME with columns ID, FIRSTNAME, LASTNAME, EMAIL, PASSWORD, and ISADMIN.
     @Override
     public void onCreate(SQLiteDatabase db) {
         //create sqlite query
@@ -42,13 +40,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
+    //Drops the existing table specified by TABLE_NAME if it exists and calls onCreate() to recreate it
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " +TABLE_NAME);
         onCreate(db);
-
     }
-
 
     //insert data base user data
     public boolean dataInsert(String firstName, String lastName, String email, String password, boolean isAdmin){

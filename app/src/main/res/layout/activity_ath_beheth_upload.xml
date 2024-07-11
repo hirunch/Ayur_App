@@ -23,17 +23,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
+                android:layout_marginBottom="400dp"
                 android:background="@drawable/cat_shape"
                 android:layout_gravity="center_horizontal"
-                android:padding="20dp">
+                android:padding="20dp"
+                tools:ignore="UselessParent">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="අත් බෙහෙත් ඇතුලත් කරන්න"
+                    android:text="@string/abuUploadT"
                     android:textAlignment="center"
                     android:textColor="@color/green"
-                    android:textSize="25dp"
+                    android:textSize="25sp"
                     android:textStyle="bold" />
 
                 <ImageView
@@ -43,7 +45,8 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
                     android:scaleType="fitXY"
-                    android:src="@drawable/uploading" />
+                    android:src="@drawable/uploading"
+                    android:contentDescription="@string/upImg" />
 
                 <EditText
                     android:id="@+id/aBTopic"
@@ -54,11 +57,12 @@
                     android:ems="10"
                     android:background="@drawable/fill_bg"
                     android:gravity="start|center_vertical"
-                    android:hint="ශීර්ෂය (මාතෘකාව) ඇතුලත් කරන්න"
-                    android:textSize="16dp"
+                    android:hint="@string/topic"
+                    android:textSize="16sp"
                     android:inputType="text"
                     android:padding="16dp"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:autofillHints="" />
 
 
                 <EditText
@@ -69,11 +73,13 @@
                     android:background="@drawable/fill_bg"
                     android:textColorHint="@color/hintColor"
                     android:ems="10"
+                    android:textSize="16sp"
                     android:gravity="start|center_vertical"
-                    android:hint="විස්තරාත්මකව දක්වන්න"
+                    android:hint="@string/desc"
                     android:inputType="textMultiLine"
                     android:padding="16dp"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:autofillHints="" />
 
                 <EditText
                     android:id="@+id/abDate"
@@ -86,8 +92,10 @@
                     android:textColorHint="@color/hintColor"
                     android:gravity="start|center_vertical"
                     android:textColor="@color/black"
-                    android:hint="දිනය ඇතුලත් කරන්න"
-                    android:inputType="date" />
+                    android:textSize="16sp"
+                    android:hint="@string/date"
+                    android:inputType="date"
+                    android:autofillHints="" />
 
 
                 <Button
@@ -97,8 +105,8 @@
                     android:layout_marginTop="30dp"
                     android:layout_marginBottom="50dp"
                     android:backgroundTint="@color/green"
-                    android:text="Save"
-                    android:textSize="18dp" />
+                    android:text="@string/stSave"
+                    android:textSize="18sp" />
             </LinearLayout>
 
 

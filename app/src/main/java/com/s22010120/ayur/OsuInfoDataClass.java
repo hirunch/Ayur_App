@@ -11,19 +11,15 @@ public class OsuInfoDataClass {
     public String getOsuKey() {
         return osuKey;
     }
-
     public void setOsuKey(String osuKey) {
         this.osuKey = osuKey;
     }
-
     public String getOsuDataTopic() {
         return osuDataTopic;
     }
-
     public String getOsuDataDesc() {
         return osuDataDesc;
     }
-
     public String getOsuDataImage() {
         return osuDataImage;
     }
@@ -31,6 +27,7 @@ public class OsuInfoDataClass {
         return osuDataDate;
     }
 
+    // Constructor for OsuInfoDataClass that initializes its fields with provided values
     public OsuInfoDataClass(String osuDataTopic, String osuDataDesc,String osuDataDate, String osuDataImage) {
         this.osuDataTopic = osuDataTopic;
         this.osuDataDesc = osuDataDesc;
@@ -41,8 +38,5 @@ public class OsuInfoDataClass {
     public OsuInfoDataClass(){
 
     }
-
-
-
 
 }

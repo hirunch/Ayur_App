@@ -5,10 +5,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-
 import java.util.Locale;
 
 public class BangalowsActivity extends AppCompatActivity {
@@ -26,7 +24,7 @@ public class BangalowsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_bangalows);
-
+        //initialize id
         haldummullaDetails = findViewById(R.id.haldummullaDetalis);
         haldumullaLocation = findViewById(R.id.haldummullaLocation);
 

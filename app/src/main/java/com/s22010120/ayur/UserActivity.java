@@ -11,16 +11,15 @@ import android.widget.CompoundButton;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 
 public class UserActivity extends AppCompatActivity{
 
     TextView profileBtn, stepCount, userName, aboutViewBtn;
     FrameLayout loginOutBtn;
     SharedPreferences sp;
+    ImageView userprofile;
     SharedPreferences.Editor editor;
     CheckBox biometricsCheck;
     DatabaseHelper ayurDatabase;
@@ -31,19 +30,19 @@ public class UserActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_user);
-
+        //initialize id
         profileBtn = (TextView) findViewById(R.id.profileViewBtn);
         loginOutBtn = findViewById(R.id.loginOutBtn);
         biometricsCheck = findViewById(R.id.biometricsCheck);
         userName = findViewById(R.id.usename);
+        userprofile = findViewById(R.id.userPic);
         aboutViewBtn = (TextView) findViewById(R.id.about_view);
-
+        //call databaseHelper
         ayurDatabase = new DatabaseHelper(this);
 
         SharedPreferences preferences = getSharedPreferences("ShName", Context.MODE_PRIVATE);
         boolean isChecked = preferences.getBoolean("checkBoxKey", false);
         biometricsCheck.setChecked(isChecked);
-
 
         biometricsCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
             @Override
@@ -87,7 +86,6 @@ public class UserActivity extends AppCompatActivity{
 
         //view data function call
         viewData();
-
     }
 
     private void loginOut() {
@@ -105,8 +103,6 @@ public class UserActivity extends AppCompatActivity{
 
         }
     }
-
-
 
 }
 

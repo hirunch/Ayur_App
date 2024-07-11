@@ -10,11 +10,9 @@ public class OHelpsDataClass {
     public String getOhKey() {
         return ohKey;
     }
-
     public void setOhKey(String ohKey) {
         this.ohKey = ohKey;
     }
-
     public String getOtherHTopic() {
         return otherHTopic;
     }
@@ -28,7 +26,7 @@ public class OHelpsDataClass {
         return ohDateData;
     }
 
-
+    // Constructor for OHelpsDataClass that initializes its fields with provided values
     public OHelpsDataClass(String otherHTopic, String otherHDesc, String ohDateData, String otherHImage) {
         this.otherHTopic = otherHTopic;
         this.otherHDesc = otherHDesc;

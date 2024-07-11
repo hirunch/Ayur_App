@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -22,9 +21,9 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_forgot_password);
-
+        //call databaseHelper
         ayurDatabase = new DatabaseHelper(this);
-
+        //initialize id
         userResetEmail = findViewById(R.id.uResetEmail);
         userResetPassword = findViewById(R.id.uResetPassword);
         resetPasswordBtn = findViewById(R.id.uResetBtn);
@@ -71,7 +70,6 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                     }else {
                         Toast.makeText(ForgotPasswordActivity.this,"Error try again",
                                 Toast.LENGTH_SHORT).show();
-                        userResetEmail.getText().clear();
                         userResetPassword.getText().clear();
                         userResetConfirmPsw.getText().clear();
 

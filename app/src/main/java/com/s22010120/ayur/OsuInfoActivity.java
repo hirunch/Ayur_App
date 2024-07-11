@@ -35,13 +35,13 @@ public class OsuInfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_osu_info);
-
+        //initialize id
         fabOsuAddBtn = findViewById(R.id.fabOsuBtn);
         isAdmin = findViewById(R.id.adminOsuTitle);
         recyclerViewOsu = findViewById(R.id.recycleViewOsu);
-
+        //call databaseHelper
         ayurDatabase = new DatabaseHelper(this);
-
+        // Creates a new GridLayoutManager with 1 column and sets it as the layout manager for recyclerViewOsu
         GridLayoutManager gridLayoutManager = new GridLayoutManager(OsuInfoActivity.this, 1);
         recyclerViewOsu.setLayoutManager(gridLayoutManager);
 
@@ -52,13 +52,14 @@ public class OsuInfoActivity extends AppCompatActivity {
         dialog.show();
 
         osuInfoDataList = new ArrayList<>();
-
+        // Creates a new instance of osuInfoAdapter and sets it as the adapter for recyclerViewOsu
         OsuInfoAdapter osuInfoAdapter = new OsuInfoAdapter(OsuInfoActivity.this, osuInfoDataList);
         recyclerViewOsu.setAdapter(osuInfoAdapter);
-
+        // Retrieves a reference to the Osu Data node in the Firebase Realtime Database
         databaseReference = FirebaseDatabase.getInstance().getReference("Osu Data");
         dialog.show();
 
+        // Sets up EventListener on databaseReference to listen for data changes in Firebase Realtime Database
         eventListener = databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -75,7 +76,7 @@ public class OsuInfoActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
+                //handles for errors
             }
         });
 

@@ -7,13 +7,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-
 import com.bumptech.glide.Glide;
 import com.github.clans.fab.FloatingActionButton;
 import com.github.clans.fab.FloatingActionMenu;
@@ -40,7 +35,7 @@ public class OtherHelpsViewsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_other_helps_views);
-
+        //initialize id
         ohDetailImage = findViewById(R.id.ohDetailImage);
         ohDetailTopic = findViewById(R.id.ohDetailTitle);
         ohDetailDec = findViewById(R.id.ohDetailDesc);
@@ -49,12 +44,13 @@ public class OtherHelpsViewsActivity extends AppCompatActivity {
         ohDeleteBtn = findViewById(R.id.ohDeleteButton);
         ohFabm = findViewById(R.id.ohFam);
         isAdmin = findViewById(R.id.adminOhfab);
-
+        //call databaseHelper
         ayurDatabase = new DatabaseHelper(this);
-
+        // Retrieves the extras (bundle) from the intent that started this activity
         Bundle bundle = getIntent().getExtras();
 
         if(bundle != null){
+            // Sets the description, title, and date text from the bundle into respective TextViews
             ohDetailDec.setText(bundle.getString("Description"));
             ohDetailTopic.setText(bundle.getString("Topic"));
             ohDetailDate.setText(bundle.getString("Date"));
@@ -67,9 +63,10 @@ public class OtherHelpsViewsActivity extends AppCompatActivity {
         ohDeleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Retrieves a reference to the Other Helps Data node in the Firebase Realtime Database
                 final DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Other Helps Data");
+                // Retrieves an instance of FirebaseStorage and creates a StorageReference using the imageUrl
                 FirebaseStorage storage = FirebaseStorage.getInstance();
-
                 StorageReference storageReference = storage.getReferenceFromUrl(ohImageUrl);
                 storageReference.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
@@ -84,10 +81,11 @@ public class OtherHelpsViewsActivity extends AppCompatActivity {
             }
         });
 
-        //edit button
+        //Other Helps Data edit button
         ohEditBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Creates an intent to start the ohEditActivity and adds topic, description, date, image URL, and key as extras
                 Intent intent = new Intent(OtherHelpsViewsActivity.this, ohEditActivity.class)
                         .putExtra("Topic", ohDetailTopic.getText().toString())
                         .putExtra("Description", ohDetailDec.getText().toString())

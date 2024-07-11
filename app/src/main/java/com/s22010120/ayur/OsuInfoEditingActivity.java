@@ -10,7 +10,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
-
 import androidx.activity.EdgeToEdge;
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
@@ -19,7 +18,6 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -50,7 +48,7 @@ public class OsuInfoEditingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_osu_info_editing);
-
+        //initialize id
         osuUpdateTopic = findViewById(R.id.osuUpdateTopic);
         osuUpdateDesc = findViewById(R.id.osuUpdateDesc);
         osuUpdateDate = findViewById(R.id.osuUpdateDate);
@@ -74,17 +72,20 @@ public class OsuInfoEditingActivity extends AppCompatActivity {
                     }
                 });
 
+        // Retrieves the extras (bundle) from the intent that started this activity
         Bundle bundle = getIntent().getExtras();
-
         if(bundle != null){
+            // Loads the image from the bundle into osuUpdateImage using Glide
             Glide.with(OsuInfoEditingActivity.this).load(bundle.getString("Image")).into(osuUpdateImage);
+            // Sets the topic, description, and date text from the bundle into respective TextViews
             osuUpdateTopic.setText(bundle.getString("Topic"));
             osuUpdateDesc.setText(bundle.getString("Description"));
             osuUpdateDate.setText(bundle.getString("Date"));
+            // Retrieves the key and old image URL from the bundle
             key = bundle.getString("Key");
             osuImageUrl = bundle.getString("Image");
         }
-
+        // Retrieves a reference to the Other Helps Data node in the Firebase Realtime Database and specifies the child node using key
         databaseReference = FirebaseDatabase.getInstance().getReference("Osu Data").child(key);
 
         //image pick device storage
@@ -108,6 +109,7 @@ public class OsuInfoEditingActivity extends AppCompatActivity {
     }
     //updating function
     public void updateOsuData(){
+        // Retrieves a reference to the Firebase Storage and specifies the location of the file using child nodes
         storageReference = FirebaseStorage.getInstance().getReference().child("Osu Data")
                 .child(osuUri.getLastPathSegment());
 
